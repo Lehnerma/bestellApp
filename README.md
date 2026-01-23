@@ -1,2 +1,3 @@
 # bestellApp
-Traing repo for modul 7 for DA
+
+Traing repo for modul 7 DA
