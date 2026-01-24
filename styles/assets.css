@@ -1,0 +1,38 @@
+.logo{
+  display: block;
+  background: url(../assets/icons/favicon.png);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+dynamisches erstellen des einkaufswagen am schluss.
+.img-btn {
+    background: none;
+    border: solid 1px;
+  }
+  .img-btn img {
+    position: relative;
+    width: 250px;
+    cursor: pointer;
+    background: none;
+    transition: all 200ms ease-in-out;
+  }
+
+  body::after {
+    content: url("./assets/icons/add.gif");
+    display: none;
+  }
+   */

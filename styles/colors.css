@@ -1,0 +1,59 @@
+:root {
+    /* Hauptfarbe */
+    --bg-primary: #E76C1F;
+    --primary-light: #FF8A3D;
+    --primary-dark: #C85A0F;
+    --primary-darker: #A04808;
+    
+    /* Komplementärfarbe (Blau-Grün) */
+    --secondary: #1F9FE7;
+    --secondary-light: #3DB4FF;
+    --secondary-dark: #0F7DC8;
+    
+    /* Akzentfarben */
+    --accent-warm: #FFB84D;      /* Warmes Gelb-Orange */
+    --accent-red: #E74C3C;        /* Warmes Rot */
+    --accent-green: #27AE60;      /* Frisches Grün */
+    
+    /* Neutrale Farben */
+    --neutral-50: #FAFAFA;        /* Sehr helles Grau */
+    --neutral-100: #F5F5F5;       /* Helles Grau */
+    --neutral-200: #EEEEEE;       /* Hintergrund */
+    --neutral-300: #E0E0E0;       /* Borders */
+    --neutral-400: #BDBDBD;       /* Deaktiviert */
+    --neutral-500: #9E9E9E;       /* Placeholder */
+    --neutral-600: #757575;       /* Sekundärtext */
+    --neutral-700: #616161;       /* Text */
+    --neutral-800: #424242;       /* Haupttext */
+    --neutral-900: #212121;       /* Dunkelster Text */
+    
+    /* Semantische Farben */
+    --success: #2ECC71;           /* Erfolg/Bestätigung */
+    --warning: #F39C12;           /* Warnung */
+    --error: #E74C3C;             /* Fehler */
+    --info: #3498DB;              /* Information */
+    
+    /* Hintergründe */
+    --bg-primary2: #FFFFFF;        /* Haupthintergrund */
+    --bg-secondary: #F8F9FA;      /* Sekundärer Hintergrund */
+    --bg-tertiary: #FFF5EE;       /* Warmer Hintergrund (passt zu Orange) */
+    --bg-dark: #2C3E50;           /* Dunkler Hintergrund */
+    
+    /* Text */
+    --text-primary: #212121;      /* Haupttext */
+    --text-secondary: #757575;    /* Sekundärtext */
+    --text-tertiary: #9E9E9E;     /* Tertiärtext */
+    --text-inverse: #FFFFFF;      /* Text auf dunklem Hintergrund */
+    --text-on-primary: #FFFFFF;   /* Text auf Primary-Farbe */
+    
+    /* Schatten */
+    --shadow-sm: 0 1px 2px rgba(231, 108, 31, 0.1);
+    --shadow-md: 0 4px 6px rgba(231, 108, 31, 0.1);
+    --shadow-lg: 0 10px 15px rgba(231, 108, 31, 0.15);
+    --shadow-xl: 0 20px 25px rgba(231, 108, 31, 0.2);
+    
+    /* Verläufe */
+    --gradient-primary: linear-gradient(135deg, #E76C1F 0%, #FF8A3D 100%);
+    --gradient-warm: linear-gradient(135deg, #FFB84D 0%, #E76C1F 100%);
+    --gradient-sunset: linear-gradient(135deg, #E74C3C 0%, #E76C1F 50%, #FFB84D 100%);
+  }
