@@ -1,0 +1,26 @@
+.star{
+    background-image: url(../assets/icons/star.svg);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+.star-unfill{
+    background-image: url(../assets/icons/star-unfill.svg);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+.star-rating-container{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: var(--spacing-xs) var(--spacing-lg);
+    border-radius: 1.5rem;
+}
+.star-rating{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 0.5rem;
+}

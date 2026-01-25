@@ -14,3 +14,23 @@
     text-decoration: none;
     color: black;
 }
+
+.container-row{
+    display: flex;
+    justify-content: center;
+    max-width: var(--max-dp-width);
+    width: 100%;
+}
+.container-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: var(--max-dp-width);
+    width: 100%;
+}
+.bg-light{
+    background-color: var(--neutral-200);
+}
+.bg-md{
+    background-color: var(--neutral-300);
+}

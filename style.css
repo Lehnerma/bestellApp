@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 header {
   background-color: var(--bg-primary);
   display: flex;
@@ -23,4 +24,38 @@ header {
       }
     }
   }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  .restaurant-img {
+    justify-self: center;
+    width: 100%;
+    max-width: var(--max-dp-width);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 360px;
+    background-color: var(--neutral-200);
+    img{
+      position: absolute;
+    }
+    .main-bg {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      height: 300px;
+    }
+    .restaurant-logo{
+      background-color: var(--neutral-300);
+      padding: var(--spacing-ml);
+      border-radius: 40%;
+      box-shadow: var(--shadow-md);
+      z-index: 2;
+      top: 180px;
+    }
+  }
+
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
     <link rel="stylesheet" href="./styles/card.css" />
+    <link rel="stylesheet" href="./styles/rating.css" />
 
     <script src="script.js"></script>
     <title>Bestell App</title>
@@ -28,7 +29,31 @@
         </section>
       </article>
     </header>
-    <main></main>
+    <main>
+      <article role="restaurant image" class="container-col">
+        <section class="restaurant-img">
+          <img src="./assets/img/pasta-bg.jpg" alt="Pasta Tomatos" class="main-bg" />
+          <img src="./assets/icons/spaghetti.png" alt="Spagetti Logo" class="restaurant-logo" />
+        </section>
+        <section class="container-col bg-light">
+          <h2 class="title">Veni Vidi Pizzi</h2>
+          <h4 class="title">Ich kam - sah - und aß Pizza</h4>
+          <aside class="star-rating-container bg-md">
+            <section class="star-rating">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star-unfill"></span>
+            </section>
+            <section class="star-info">
+            <p class="caption-lg title">4.2</p>
+            <p class="caption-sm title">(404)</p>
+          </section>
+          </aside>
+        </section>
+      </article>
+    </main>
     <footer></footer>
   </body>
 </html>
