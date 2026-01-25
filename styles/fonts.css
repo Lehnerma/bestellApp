@@ -106,8 +106,8 @@ h6{
   letter-spacing: 0.03em;
   font-weight: 500;
 }
-body-lg{
-  font-size: 1.06rem;
+.body-lg{
+  font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
   font-weight: 400;
@@ -141,4 +141,7 @@ body-sm{
   line-height: 1.65;
   letter-spacing: 0.03em;
   font-weight: 500;
+}
+.tx-center{
+    text-align: center;
 }

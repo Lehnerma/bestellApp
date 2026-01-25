@@ -36,7 +36,7 @@
     /* Hintergründe */
     --bg-primary2: #FFFFFF;        /* Haupthintergrund */
     --bg-secondary: #F8F9FA;      /* Sekundärer Hintergrund */
-    --bg-tertiary: #FFF5EE;       /* Warmer Hintergrund (passt zu Orange) */
+    --bg-warm: #FFF5EE;       /* Warmer Hintergrund (passt zu Orange) */
     --bg-dark: #2C3E50;           /* Dunkler Hintergrund */
     
     /* Text */

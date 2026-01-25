@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
-    <link rel="stylesheet" href="./styles/card.css" />
+    <link rel="stylesheet" href="./styles/dishes.css" />
     <link rel="stylesheet" href="./styles/rating.css" />
 
     <script src="script.js"></script>
@@ -29,28 +29,46 @@
         </section>
       </article>
     </header>
-    <main>
+    <main class="bg-light">
       <article role="restaurant image" class="container-col">
-        <section class="restaurant-img">
+        <section class="restaurant-img container-col">
           <img src="./assets/img/pasta-bg.jpg" alt="Pasta Tomatos" class="main-bg" />
           <img src="./assets/icons/spaghetti.png" alt="Spagetti Logo" class="restaurant-logo" />
         </section>
-        <section class="container-col bg-light">
-          <h2 class="title">Veni Vidi Pizzi</h2>
-          <h4 class="title">Ich kam - sah - und aß Pizza</h4>
-          <aside class="star-rating-container bg-md">
-            <section class="star-rating">
+      </article>
+
+      <article role="Restaurant Name und Rating" class="container-col restaurant-title">
+        <h2 class="title tx-center">Veni Vidi Pizzi</h2>
+        <h4 class="title tx-center">Ich kam - sah - und aß Pizza</h4>
+        <aside class="star-rating-container bg-md">
+          <section class="star-rating">
             <span class="star"></span>
             <span class="star"></span>
             <span class="star"></span>
             <span class="star"></span>
             <span class="star-unfill"></span>
-            </section>
-            <section class="star-info">
+          </section>
+          <section class="star-info">
             <p class="caption-lg title">4.2</p>
             <p class="caption-sm title">(404)</p>
           </section>
-          </aside>
+        </aside>
+      </article>
+
+      <!-- nav bar? -->
+
+      <!-- dishes -->
+      <article class="order-container container-col">
+        <nav class="container-row dish-nav">
+          <a href="#" class="noLink body-lg title">Vorspeisen</a>
+          <a href="#" class="noLink body-lg title">Pasta</a>
+          <a href="#" class="noLink body-lg title">Pizza</a>
+          <a href="#" class="noLink body-lg title">Dessert</a>
+          <a href="#" class="noLink body-lg title">Getränke</a>
+        </nav>
+        <section class="container-row order-section">
+          <article class="dishes-container">dishes</article>
+          <aside class="basket-container">basket</aside>
         </section>
       </article>
     </main>

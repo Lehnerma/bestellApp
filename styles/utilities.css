@@ -34,3 +34,6 @@
 .bg-md{
     background-color: var(--neutral-300);
 }
+.dnone{
+    display: none;
+}

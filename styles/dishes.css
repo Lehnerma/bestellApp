@@ -1,0 +1,24 @@
+.order-container{
+    width: 100%;
+    .dish-nav{
+        background-color: var(--bg-warm);
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: var(--spacing-sm);
+        a{
+            &:hover{
+                color: blue;
+            }
+        }
+    }
+}
+
+.order-section{
+    .dishes-container{
+        width: calc(100% - 300px);
+    }
+
+    .basket-container{
+        background-color: antiquewhite;
+    }
+}
