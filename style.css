@@ -3,8 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 header {
   background-color: var(--bg-primary);
   display: flex;
+  justify-content: center;
+  .header {
+    width: 100%;
+    max-width: var(--max-dp-width);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-ml);
+
+    section {
+      display: flex;
+      align-items: center;
+      /* check - maybe switch to rsponsiv shopping card */
+      img {
+        height: 50px;
+      }
+    }
+  }
 }
