@@ -1,24 +1,82 @@
-.order-container{
-    width: 100%;
-    .dish-nav{
-        background-color: var(--bg-warm);
-        justify-content: flex-start;
-        gap: 2rem;
-        padding: var(--spacing-sm);
-        a{
-            &:hover{
-                color: blue;
-            }
-        }
+.order-container {
+  width: 100%;
+  .dish-nav {
+    background-color: var(--bg-warm);
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
+    a {
+      &:hover {
+        color: blue;
+      }
     }
+  }
 }
 
-.order-section{
-    .dishes-container{
-        width: calc(100% - 300px);
+.order-section {
+  height: 1000px;
+  gap: 1.5rem;
+
+  .dishes-container {
+    flex: 1 1 0;
+
+    .category {
+      background-color: var(--accent-warm);
+    }
+  }
+
+  .dish {
+    display: flex;
+    background-color: var(--neutral-300);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md);
+    gap: 1rem;
+    border-radius: 1.5rem;
+    &:hover {
+      background-color: var(--neutral-400);
     }
 
-    .basket-container{
-        background-color: antiquewhite;
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: var(--spacing-sm);
     }
+    .dish-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .dish-right {
+      flex-grow: 1;
+    }
+  }
+}
+
+.category-section {
+  display: flex;
+
+  .category {
+    height: 60px;
+    width: 60px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .starter {
+    background-image: url(../assets/icons/starter.svg);
+  }
+  .pizza {
+    background-image: url(../assets/icons/pizza.svg);
+  }
+  .pasta {
+    background-image: url(../assets/icons/pasta.svg);
+  }
+  .dessert {
+    background-image: url(../assets/icons/dessert.svg);
+  }
+  .drinks {
+    background-image: url(../assets//icons/driks.svg);
+  }
 }
