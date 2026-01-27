@@ -1,6 +1,6 @@
 :root {
     /* Hauptfarbe */
-    --bg-primary: #E76C1F;
+
     --primary-light: #FF8A3D;
     --primary-dark: #C85A0F;
     --primary-darker: #A04808;
@@ -10,10 +10,16 @@
     --secondary-light: #3DB4FF;
     --secondary-dark: #0F7DC8;
     
-    /* Akzentfarben */
-    --accent-warm: #FFB84D;      /* Warmes Gelb-Orange */
-    --accent-red: #E74C3C;        /* Warmes Rot */
-    --accent-green: #27AE60;      /* Frisches Grün */
+    /* background */
+    --bg-primary: #E76C1F;
+    --bg-lighter: #FFFFFF;
+    --bg-warm: #FFB84D;      /* Warmes Gelb-Orange */
+    --bg-red: #E74C3C;        /* Warmes Rot */
+    --bg-green: #27AE60;      /* Frisches Grün */
+
+    --bg-secondary: #F8F9FA;      /* Sekundärer Hintergrund */
+    --bg-warm2: #FFF5EE;       /* Warmer Hintergrund (passt zu Orange) */
+    --bg-dark: #2C3E50;           /* Dunkler Hintergrund */
     
     /* Neutrale Farben */
     --neutral-50: #FAFAFA;        /* Sehr helles Grau */
@@ -32,13 +38,7 @@
     --warning: #F39C12;           /* Warnung */
     --error: #E74C3C;             /* Fehler */
     --info: #3498DB;              /* Information */
-    
-    /* Hintergründe */
-    --bg-primary2: #FFFFFF;        /* Haupthintergrund */
-    --bg-secondary: #F8F9FA;      /* Sekundärer Hintergrund */
-    --bg-warm: #FFF5EE;       /* Warmer Hintergrund (passt zu Orange) */
-    --bg-dark: #2C3E50;           /* Dunkler Hintergrund */
-    
+
     /* Text */
     --text-primary: #212121;      /* Haupttext */
     --text-secondary: #757575;    /* Sekundärtext */

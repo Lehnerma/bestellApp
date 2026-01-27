@@ -1,39 +1,45 @@
-:root{
-    /* Spacing */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-ml: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 2.5rem;
+:root {
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-ml: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+  --spacing-xxl: 3rem;
 
-    --max-dp-width: 1440px;
+  --max-dp-width: 1440px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.noLink{
-    text-decoration: none;
-    color: black;
+.noLink {
+  text-decoration: none;
+  color: black;
 }
 
-.container-row{
-    display: flex;
-    justify-content: center;
-    max-width: var(--max-dp-width);
-    width: 100%;
+.container-row {
+  display: flex;
+  justify-content: center;
+  max-width: var(--max-dp-width);
+  width: 100%;
 }
-.container-col{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: var(--max-dp-width);
-    width: 100%;
+.container-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--max-dp-width);
+  width: 100%;
 }
-.bg-light{
-    background-color: var(--neutral-200);
+.bg-light {
+  background-color: var(--neutral-200);
 }
-.bg-md{
-    background-color: var(--neutral-300);
+.bg-md {
+  background-color: var(--neutral-300);
 }
-.dnone{
-    display: none;
+.dnone {
+  display: none;
 }

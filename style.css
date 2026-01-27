@@ -13,45 +13,37 @@ header {
     max-width: var(--max-dp-width);
     display: flex;
     justify-content: space-between;
-    padding: var(--spacing-md) var(--spacing-ml);
+    padding: var(--spacing-sm) var(--spacing-ml);
 
     section {
       display: flex;
       align-items: center;
-      /* check - maybe switch to rsponsiv shopping card */
       img {
-        height: 50px;
+        height: 45px;
       }
     }
   }
 }
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .restaurant-img {
-    .main-bg {
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-      height: 300px;
-    }
-    .restaurant-logo {
-      position: absolute;
-      top: 260px;
-      background-color: var(--neutral-300);
-      padding: var(--spacing-ml);
-      border-radius: 40%;
-      box-shadow: var(--shadow-md);
-      z-index: 2;
-    }
-  }
-  .restaurant-title{
-    padding: var(--spacing-lg);
-    color: var(--neutral-800);
-  }
+.main-bg {
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+  height: 300px;
 }
+.restaurant-logo {
+  position: absolute;
+  top: 260px;
+  background-color: var(--neutral-300);
+  padding: var(--spacing-ml);
+  border-radius: 40%;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+.restaurant-title{
+  padding: var(--spacing-xxl);
+  color: var(--neutral-800);
+}
+
 
 .basket-container{
     background-color: antiquewhite;
