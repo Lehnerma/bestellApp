@@ -1,5 +1,6 @@
 .order-container{
     width: 100%;
+    height: 100vh;
     .dish-nav{
         background-color: var(--bg-warm);
         justify-content: flex-start;
@@ -20,5 +21,6 @@
 
     .basket-container{
         background-color: antiquewhite;
+        flex-grow: 1;
     }
 }
