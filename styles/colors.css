@@ -12,8 +12,9 @@
     
     /* background */
     --bg-primary: #E76C1F;
+    --bg-primary-50: #e76c1f7e;
     --bg-lighter: #FFFFFF;
-    --bg-warm: #FFB84D;      /* Warmes Gelb-Orange */
+    --bg-warm: #ffb84d8a;      /* Warmes Gelb-Orange */
     --bg-red: #E74C3C;        /* Warmes Rot */
     --bg-green: #27AE60;      /* Frisches Grün */
 
