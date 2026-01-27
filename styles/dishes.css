@@ -29,12 +29,14 @@
   .dish {
     display: flex;
     background-color: var(--neutral-300);
+    box-shadow: var(--schadow-sm);
     padding: var(--spacing-md);
-    margin: var(--spacing-md);
+
     gap: 1rem;
     border-radius: 1.5rem;
     &:hover {
       background-color: var(--neutral-400);
+      box-shadow: var(--schadow-md);
     }
 
     img {

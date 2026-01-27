@@ -47,7 +47,7 @@
     --text-on-primary: #FFFFFF;   /* Text auf Primary-Farbe */
     
     /* Schatten */
-    --shadow-sm: 0 1px 2px rgba(231, 108, 31, 0.1);
+    --shadow-sm: 0 0px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 0px 8px rgba(0, 0, 0, 0.503);
     --shadow-lg: 0 10px 15px rgba(231, 108, 31, 0.15);
     --shadow-xl: 0 20px 25px rgba(231, 108, 31, 0.2);
