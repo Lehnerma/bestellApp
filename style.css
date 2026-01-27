@@ -51,5 +51,15 @@ main {
     padding: var(--spacing-lg);
     color: var(--neutral-800);
   }
+}
 
+.basket-container{
+    background-color: antiquewhite;
+    width: 300px;
+  
+  .basket-wraper{
+    position: sticky;
+    top: 0;
+
+  }
 }
