@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
-    <link rel="stylesheet" href="./styles/dishes.css" />
+    <link rel="stylesheet" href="./styles/dishes2.css" />
     <link rel="stylesheet" href="./styles/rating.css" />
 
     <script src="script.js"></script>
@@ -36,7 +36,6 @@
         <img src="./assets/img/pasta-bg.jpg" alt="Pasta Tomatos" class="main-bg" />
         <img src="./assets/icons/spaghetti.png" alt="Spagetti Logo" class="restaurant-logo" />
       </article>
-
       <article role="Restaurant Name und Rating" class="container-col restaurant-title">
         <h2 class="title tx-center">Veni Vidi Pizzi</h2>
         <h4 class="title tx-center">Ich kam - sah - und aß Pizza</h4>
@@ -55,60 +54,29 @@
         </aside>
       </article>
 
-      <!-- dishes -->
-      <article class="order-container container-col">
-        <nav class="container-row dish-nav body-lg title">
-          <a href="#" class="noLink">Vorspeisen</a>
-          <a href="#" class="noLink">Pasta</a>
-          <a href="#" class="noLink">Pizza</a>
-          <a href="#" class="noLink">Dessert</a>
-          <a href="#" class="noLink">Getränke</a>
-        </nav>
-        
-        <section class="dishes-section">
-          <div class="category-bg">
-            <div class="dishes-header container-row">
-              <span class="category--icon starter"></span>
-              <h3 class="dish-title">Vorspeisen</h3>
-          </div>
-          </div>
-
-          <div class="order-section">
-            
-            <article class="dishes-container">
-
-
-              <!-- dish-card -->
-                          <!-- <div class="dish">
-                            <img src="./assets/img/pizza-margherita.png" alt="Pizza Margherita" class="dish-img">
-                            <aside class="dish-info">
-                              <h4 class="title dish-title">Pizza Title</h4>
-                              <p class="text dish-desc">Pizza description</p>
-                            </aside>
-                            <aside class="dish-right">
-                              <p class="dish-price">12,34€</p>
-                              <div>
-                                <button class="dnone">-</button>
-                                <button>add</button>
-                                <button class="dnone">+</button>
-                              </div>
-                            </aside>
-                          </div>
-                        </article> -->
-              
-                        <aside class="basket-container dnone">
-                          <div class="basket-wraper">
-                            <h3 class="title ">Warenkorb</h3>
-                            <section class="basket-elemts" id="basket_elements">
-                            </section>
-                          </div>
-                        </aside>
-              
-                      </section>
-                    </article>
-          </div>
+      <nav class="body-lg title">
+        <a href="#" class="noLink">Vorspeisen</a>
+        <a href="#" class="noLink">Pasta</a>
+        <a href="#" class="noLink">Pizza</a>
+        <a href="#" class="noLink">Dessert</a>
+        <a href="#" class="noLink">Getränke</a>
+      </nav>
+      <article class="category--bg">
+        <section class="category title ">
+          <span class="category--icon starter"></span>
+          <h4>Vorspeisen</h4>
         </section>
       </article>
+
+
+
+      <article class="basket--wraper">
+        <section class="basket">
+          <h3>Warenkorb:</h3>
+          <div class="basket--items"></div>
+        </section>
+      </article>
+
     </main>
     <footer></footer>
   </body>

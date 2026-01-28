@@ -1,0 +1,38 @@
+.category--bg {
+  background-color: var(--bg-primary);
+}
+.category{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.category--icon {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+}
+.starter {
+    background-image: url(../assets/icons/starter.svg);
+  }
+  .pizza {
+    background-image: url(../assets/icons/pizza.svg);
+  }
+  .pasta {
+    background-image: url(../assets/icons/pasta.svg);
+  }
+  .dessert {
+    background-image: url(../assets/icons/dessert.svg);
+  }
+  .drinks {
+    background-image: url(../assets//icons/driks.svg);
+  }
+
+
+
+
+.basket--wraper {
+  border: solid blue 1px;
+}

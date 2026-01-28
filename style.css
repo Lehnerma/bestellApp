@@ -19,7 +19,7 @@ header {
       display: flex;
       align-items: center;
       img {
-        height: 45px;
+        height: 2.7rem;
       }
     }
   }
@@ -28,20 +28,32 @@ header {
   width: 100vw;
   object-fit: cover;
   object-position: center;
-  height: 300px;
+  height: 18.75rem;
 }
 .restaurant-logo {
   position: absolute;
-  top: 260px;
+  top: 16.25rem;
   background-color: var(--neutral-300);
   padding: var(--spacing-ml);
   border-radius: 40%;
   box-shadow: var(--shadow-md);
   z-index: 2;
 }
-.restaurant-title{
+.restaurant-title {
   padding: var(--spacing-xxl);
   color: var(--neutral-800);
 }
 
-
+main nav {
+  background-color: var(--neutral-300);
+  border-radius: 0.5rem;
+  display: flex;
+  max-width: var(--max-dp-width);
+  width: 100%;
+  gap: 2rem;
+  padding: var(--spacing-xs);
+  padding-left: 2rem;
+  a:hover{
+    color: var(--primary-light);
+  }
+}

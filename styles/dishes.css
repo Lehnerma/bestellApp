@@ -16,67 +16,90 @@
     }
   }
 }
+
 .dishes-section {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  height: 1000px;
 }
-.category-bg {
+
+.category--bg {
   width: 100%;
   background-color: var(--bg-primary-50);
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-}
-.dishes-header {
-  justify-content: flex-start;
-  align-items: center;
-}
-.category--icon {
-  height: 60px;
-  width: 60px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position:absolute;
+  .dishes--header {
+    justify-content: flex-start;
+    align-items: center;
 
+    .dish--title {
+      padding-left: 70px;
+    }
+
+    .category--icon {
+      height: 60px;
+      width: 60px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+    }
+    .starter {
+      background-image: url(../assets/icons/starter.svg);
+    }
+    .pizza {
+      background-image: url(../assets/icons/pizza.svg);
+    }
+    .pasta {
+      background-image: url(../assets/icons/pasta.svg);
+    }
+    .dessert {
+      background-image: url(../assets/icons/dessert.svg);
+    }
+    .drinks {
+      background-image: url(../assets//icons/driks.svg);
+    }
+  }
 }
-.dish-title{
-    padding-left: 70px;
+
+.order--section {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  max-width: var(--max-dp-width);
+  width: 100%;
 }
-.starter {
-  background-image: url(../assets/icons/starter.svg);
+
+.category--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* wenn kein warenkorb eingeblendet ist dann ist die dish card in der mitte - wegen dem gap*/
+  width: calc(100% - 19rem);
+  gap: 1rem;
+
+  /* only for styling */
+  border: solid red 1px;
 }
-.pizza {
-  background-image: url(../assets/icons/pizza.svg);
-}
-.pasta {
-  background-image: url(../assets/icons/pasta.svg);
-}
-.dessert {
-  background-image: url(../assets/icons/dessert.svg);
-}
-.drinks {
-  background-image: url(../assets//icons/driks.svg);
-}
-.oder-section {
-  height: 100px;
-  background-color: red;
-}
+
 .dish {
   display: flex;
   background-color: var(--neutral-300);
   box-shadow: var(--schadow-sm);
   padding: var(--spacing-md);
-
+width: 100%;
   gap: 1rem;
   border-radius: 1.5rem;
   &:hover {
     background-color: var(--neutral-400);
-    box-shadow: var(--schadow-md);
+    box-shadow: var(--shadow-sm);
   }
 
   img {
-    width: 120px;
-    height: 120px;
+    width: 7.5rem;
+    height: 7.5rem;
     object-fit: cover;
     border-radius: var(--spacing-sm);
   }
@@ -86,16 +109,19 @@
     flex-grow: 1;
   }
   .dish-right {
-    flex-grow: 1;
+    flex-grow: 0.5;
   }
 }
 
-.basket-container {
-  background-color: antiquewhite;
-  width: 300px;
+.basket--container {
+  width: 19rem;
+  /* only for styling */
+  /* border: solid rgb(4, 0, 255) 1px; */
 
-  .basket-wraper {
+
+  .basket--wraper{
+    background-color: var(--neutral-400);
     position: sticky;
-    top: 0;
+    top: 10px;
   }
 }
