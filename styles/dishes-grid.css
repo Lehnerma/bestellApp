@@ -1,0 +1,50 @@
+.grid--container{
+    display: grid;
+    grid-template-columns: 2fr 19rem;
+    gap: 1.5rem;
+    max-width: var(--max-dp-width);
+    width: 100%;
+}
+.grid--header{
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dish--container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+.category--icon {
+    height: 50px;
+    width: 50px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    /* position: absolute; */
+  }
+  .starter {
+    background-image: url(../assets/icons/starter.svg);
+  }
+  .pizza {
+    background-image: url(../assets/icons/pizza.svg);
+  }
+  .pasta {
+    background-image: url(../assets/icons/pasta.svg);
+  }
+  .dessert {
+    background-image: url(../assets/icons/dessert.svg);
+  }
+  .drinks {
+    background-image: url(../assets//icons/drinks.svg);
+  }

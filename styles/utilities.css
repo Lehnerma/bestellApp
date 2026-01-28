@@ -40,6 +40,13 @@ main {
 .bg-md {
   background-color: var(--neutral-300);
 }
+.bg-primary{
+  background-color: var(--bg-primary);
+}
 .dnone {
   display: none;
+}
+
+.height{
+  height: 1000px;
 }

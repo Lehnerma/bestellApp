@@ -70,7 +70,7 @@ body{
   letter-spacing: 0.015em;
   font-weight: 800;
 }
-.h1{
+h1{
   font-size: 1.85rem;
   line-height: 1.55;
   letter-spacing: 0.02em;
@@ -107,7 +107,7 @@ h6{
   font-weight: 500;
 }
 .body-lg{
-  font-size: 1.08rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
   font-weight: 400;

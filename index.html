@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
-    <link rel="stylesheet" href="./styles/dishes2.css" />
+    <!-- <link rel="stylesheet" href="./styles/dishes2.css" /> -->
+    <link rel="stylesheet" href="./styles/dishes-grid.css" />
     <link rel="stylesheet" href="./styles/rating.css" />
 
     <script src="script.js"></script>
@@ -54,29 +55,87 @@
         </aside>
       </article>
 
-      <nav class="body-lg title">
-        <a href="#" class="noLink">Vorspeisen</a>
-        <a href="#" class="noLink">Pasta</a>
-        <a href="#" class="noLink">Pizza</a>
-        <a href="#" class="noLink">Dessert</a>
-        <a href="#" class="noLink">Getränke</a>
-      </nav>
-      <article class="category--bg">
-        <section class="category title ">
+      <article class="grid--container">
+        <nav class="body-lg title grid--header">
+          <a href="#" class="noLink">Vorspeisen</a>
+          <a href="#" class="noLink">Pasta</a>
+          <a href="#" class="noLink">Pizza</a>
+          <a href="#" class="noLink">Dessert</a>
+          <a href="#" class="noLink">Getränke</a>
+        </nav>
+        <!-- span about 2 columns for a title-->
+        <section class="grid--header bg-primary">
           <span class="category--icon starter"></span>
-          <h4>Vorspeisen</h4>
+          <h4 class="category--title title">Vorspeisen</h4>
         </section>
-      </article>
 
-
-
-      <article class="basket--wraper">
-        <section class="basket">
-          <h3>Warenkorb:</h3>
-          <div class="basket--items"></div>
+        <section class="dish--container" id="starter_container">
+          <!-- dynamic creation from js -->
         </section>
-      </article>
 
+        <section class="sidebar-container">
+          <div class="basket">
+            <h3 class="title">🛒 Warenkorb</h3>
+            <div class="basket--items" id="basket_items">
+              <p>test</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid--header bg-primary">
+          <span class="category--icon pasta"></span>
+          <h4 class="category--title title">Pasta</h4>
+        </section>
+
+        <section class="dish--container" id="pasta_container">
+          <!-- dynamic creation from js -->
+        </section>
+
+        <section>
+          <!-- empty column for the basket -->
+        </section>
+
+        <section class="grid--header bg-primary">
+          <span class="category--icon pizza"></span>
+          <h4 class="category--title title">Pizza</h4>
+        </section>
+
+        <section class="dish--container" id="pizza_container">
+          <!-- dynamic creation from js -->
+        </section>
+
+        <section>
+          <!-- empty column for the basket -->
+        </section>
+
+        <section class="grid--header bg-primary">
+          <span class="category--icon dessert"></span>
+          <h4 class="category--title title">Dessert</h4>
+        </section>
+
+        <section class="dish--container" id="dessert_container">
+          <!-- dynamic creation from js -->
+        </section>
+
+        <section>
+          <!-- empty column for the basket -->
+        </section>
+
+        <section class="grid--header bg-primary">
+          <span class="category--icon drinks"></span>
+          <h4 class="category--title title">Getränke</h4>
+        </section>
+
+        <section class="dish--container" id="drinks_container">
+          <!-- dynamic creation from js -->
+        </section>
+
+        <section>
+          <!-- empty column for the basket -->
+        </section>
+
+      </article>
+      <div class="height"></div>
     </main>
     <footer></footer>
   </body>
