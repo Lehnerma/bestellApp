@@ -52,9 +52,10 @@ main nav {
   width: 100%;
   gap: 2rem;
   padding: var(--spacing-xs);
-  padding-left: 2rem;
   margin-bottom: 2rem;
+  padding-left: 2rem;
   box-shadow: var(--shadow-sm);
+
   a:hover{
     color: var(--primary-light);
   }
