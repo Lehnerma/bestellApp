@@ -15,18 +15,20 @@
 }
 
 .sidebar--container {
-  background-color: var(--neutral-400);
+
   position: relative;
   justify-content: start;
-  border-radius: 3rem 0.5rem ;
+
 }
 .basket {
   position: sticky;
   top: 0;
-  /* background-color: var(--neutral-300); */
+  background-color: var(--neutral-400);
+  border-radius: 3rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1 1 auto;
 }
 .dish--container {
   display: flex;
@@ -36,8 +38,8 @@
 }
 .dish {
   display: flex;
-  background-color: var(--neutral-200);
-  &:hover{
+  background-color: var(--neutral-100);
+  &:hover {
     background-color: var(--neutral-300);
   }
   padding: var(--spacing-sm);
@@ -80,4 +82,35 @@
 }
 .drinks {
   background-image: url(../assets//icons/drinks.svg);
+}
+
+.dish--btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dish--added {
+  background-color: var(--neutral-300);
+  color: var(--primary-darker);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 1rem;
+}
+.add--card {
+  background: none;
+  background-image: url(../assets/icons/shopping-add.svg);
+  border: none;
+  width: 45px;
+  height: 55px;
+  background-size: calc(100% - 15%);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    /* filter: drop-shadow(0 0 0.5px #00000027); */
+    transform: scale(1);
+  }
 }

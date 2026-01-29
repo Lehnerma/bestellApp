@@ -50,7 +50,7 @@ Typografie
   font-family: "oswald", sans-serif;
 }
 .title{
-  font-family: "jetbrains-mono";
+  font-family: "jetbrains-mono", sans-serif;
 }
 body{
   font-size: 1rem;
