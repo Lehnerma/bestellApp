@@ -1,4 +1,4 @@
-const menu = {
+const ALL_DISHES = {
   starters: [
     {
       id: 0,
