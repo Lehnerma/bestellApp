@@ -46,6 +46,10 @@
   border-radius: 1rem;
   .dish--img {
     border-radius: 1rem;
+    width: 10rem;
+    height: 8rem;
+    object-fit: cover;
+    object-position: center;
   }
   .dish--info {
     flex: 2;

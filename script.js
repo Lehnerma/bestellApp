@@ -1,48 +1,18 @@
 function init(){
-    renderDishes();
+    renderCategorys();
 }
 
 //render dishes
-// function renderDishes(){
-//     const categorys = getCategory(ALL_DISHES)
-//     for (let dishIndex = 0; dishIndex < categorys.length; dishIndex++) {
-//         console.log(categorys[dishIndex]);
-//         if (categorys[dishIndex] == "starters"){
-            
-//         }
-//         if (categorys[dishIndex] == "pasta"){
-
-//         }
-//         if (categorys[dishIndex] == "pizzas") {
-
-//         }
-//         if (categorys[dishIndex] == "desserts"){
-
-//         }
-//         if (categorys[dishIndex] == "drinks"){
-
-//         }
-//     }
-// }
-function renderDishes(){
-    renderStarter()
-}
-function renderStarter(){
-    let starters = ALL_DISHES.starters;
-    let containerRef = document.getElementById("starters_container");
-    containerRef = "";
-    for (let dishIndex = 0; dishIndex < starters.length; dishIndex++) {
-        containerRef = getDishTemplet()
-        
+function renderCategorys(){
+    let categorys = Object.keys(ALL_DISHES)
+    for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
+        console.log(categorys[categoryIndex]);
+        renderDishes(categorys[categoryIndex])
     }
 }
-    //split into categorys - arrays?
-function getCategory(object){
-return Object.keys(object);
+function renderDishes(category){
+    let containerRef = document.getElementById('starters_container')
+    for (let dishIndex = 0; dishIndex < ALL_DISHES[category].length; dishIndex++) {
+        containerRef.innerHTML += getDishTemplet(category, dishIndex);
+    }
 }
-    //add data index
-
-// array basket?
-//render basket
-//push to basket
-//delet basket item
