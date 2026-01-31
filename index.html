@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./styles/rating.css" />
     <script src="./scripts/db.js"></script>
     <script src="./scripts/templets.js"></script>
-    <script src="script.js"></script>
+
     <title>Bestell App</title>
   </head>
   <body onload="init()">
@@ -64,8 +64,8 @@
       </nav>
 
       <article class="grid--container">
-        <div role="dishes grid left">
-          <!--dishes-->
+        <div role="dishes grid left" id="dishes">
+
           <section class="grid--header bg-primary">
             <span class="category--icon starter"></span>
             <h4 class="category--title title">Vorspeisen</h4>
@@ -73,9 +73,6 @@
 
           <section class="dish--container" id="starters_container">
             <!-- dynamic creation from js -->
-
-
-
           </section>
           <section class="grid--header bg-primary">
             <span class="category--icon pasta"></span>
@@ -91,7 +88,7 @@
             <h4 class="category--title title">Pizza</h4>
           </section>
 
-          <section class="dish--container" id="pizza_container">
+          <section class="dish--container" id="pizzas_container">
             <!-- dynamic creation from js -->
           </section>
 
@@ -100,7 +97,7 @@
             <h4 class="category--title title">Dessert</h4>
           </section>
 
-          <section class="dish--container" id="dessert_container">
+          <section class="dish--container" id="desserts_container">
             <!-- dynamic creation from js -->
           </section>
 
@@ -123,5 +120,8 @@
       </article>
     </main>
     <footer></footer>
+
+
+    <script src="script.js"></script>
   </body>
 </html>

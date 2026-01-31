@@ -1,5 +1,7 @@
 function getDishTemplet(category, dishIndex) {
-  return `<article class="dish">
+  return `<article class="dish"
+  data-id="${ALL_DISHES[category][dishIndex].id}"data-category="${category}">
+    
     <img src="${ALL_DISHES[category][dishIndex].url}" alt="dish foto" class="dish--img" />
     <section class="dish--info">
         <h4 class="title dish--title">${ALL_DISHES[category][dishIndex].name}</h4>
@@ -8,8 +10,8 @@ function getDishTemplet(category, dishIndex) {
     <section class="dish--right">
         <p class="dish--price">${ALL_DISHES[category][dishIndex].price}</p>
         <aside class="dish--btns">
-            <p class="text dish--added">added: ${ALL_DISHES[category][dishIndex].amount}</p>
-            <button class="add--card"></button>
+            <p class="text dish--added"></p>
+            <button class="add--card" onclick=""></button>
         </aside>
     </section>
 </article>`;
