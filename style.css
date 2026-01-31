@@ -60,3 +60,11 @@ main nav {
     color: var(--primary-light);
   }
 }
+
+.basket--item{
+  padding: 1rem;
+}
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+}

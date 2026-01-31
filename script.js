@@ -58,7 +58,6 @@ function countUp(dishId, dishCategory) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
       ALL_DISHES[dishCategory][dishIndex].amount++;
       renderAmount(dishIndex, dishId, dishCategory);
-      //console.log(ALL_DISHES[category][dishId].amount);
     }
   }
 }
@@ -76,7 +75,7 @@ function renderAmount(dishIndex, dishId, dishCategory) {
   amountRef.innerHTML = "";
   if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
     amountRef.classList.add("dnone");
-    ALL_DISHES[category][dishIndex].amount = 0; // index zum bestimmen in den unterteilen arrays welches gericht es wird. 
+    ALL_DISHES[category][dishIndex].amount = 0;
   } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
     amountRef.classList.remove("dnone");
     amountRef.innerHTML = "added: " + ALL_DISHES[dishCategory][dishIndex].amount;
