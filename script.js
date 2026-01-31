@@ -42,11 +42,11 @@ function renderDishes(container, category) {
 }
 
 dishesRef.addEventListener("click", (element) => {
-  let obj = element.target.closest(".dish");  
+  let obj = element.target.closest(".dish");
   let dishId = obj.dataset.id;
   let dishCategory = obj.dataset.category;
   const add = element.target.dataset;
-  
+
   if (add) {
     countUp(dishId, dishCategory);
   }
@@ -54,10 +54,10 @@ dishesRef.addEventListener("click", (element) => {
 
 // count up
 function countUp(dishId, dishCategory) {
-  for (let index = 0; index < ALL_DISHES[dishCategory].length; index++) {
-    if (dishId == ALL_DISHES[dishCategory][index].id) {
-      ALL_DISHES[category][dishId].amount++;
-      renderAmount(dishId, dishCategory)
+  for (let dishIndex = 0; dishIndex < ALL_DISHES[dishCategory].length; dishIndex++) {
+    if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
+      ALL_DISHES[dishCategory][dishIndex].amount++;
+      renderAmount(dishIndex, dishId, dishCategory);
       //console.log(ALL_DISHES[category][dishId].amount);
     }
   }
@@ -67,20 +67,19 @@ function countDown(dishId, dishCategory) {
   for (let index = 0; index < ALL_DISHES[dishCategory].length; index++) {
     if (dishId == ALL_DISHES[dishCategory][index].id) {
       ALL_DISHES[dishCategory][dishId].amount--;
-
     }
   }
 }
 // display amount
-function renderAmount(category, dishIndex) {
-    let amountRef = document.getElementById("amount"+dishIndex)
+function renderAmount(dishIndex, dishId, dishCategory) {
+  let amountRef = document.getElementById("amount" + dishId);
   amountRef.innerHTML = "";
-  if (ALL_DISHES[category][dishIndex].amount <= 0) {
+  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
     amountRef.classList.add("dnone");
-    ALL_DISHES[category][dishIndex].amount = 0;
-  } else if (ALL_DISHES[category][dishIndex].amount > 0){
-    amountRef.classList.remove("done")
-  amountRef.innerHTML = "added: " + ALL_DISHES[category][dishIndex].amount;
+    ALL_DISHES[category][dishIndex].amount = 0; // index zum bestimmen in den unterteilen arrays welches gericht es wird. 
+  } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
+    amountRef.classList.remove("dnone");
+    amountRef.innerHTML = "added: " + ALL_DISHES[dishCategory][dishIndex].amount;
   }
 }
 //add basket
