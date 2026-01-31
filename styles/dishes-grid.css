@@ -22,7 +22,7 @@
 }
 .basket {
   position: sticky;
-  top: 0;
+  top: 1rem;
   background-color: var(--neutral-400);
   border-radius: 3rem 0.5rem;
   display: flex;

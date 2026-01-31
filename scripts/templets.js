@@ -8,7 +8,7 @@ function getDishTemplet(category, dishIndex) {
     <section class="dish--right">
         <p class="dish--price">${ALL_DISHES[category][dishIndex].price}</p>
         <aside class="dish--btns">
-            <p class="text dish--added"></p>
+            <p class="text dish--added">added: ${ALL_DISHES[category][dishIndex].amount}</p>
             <button class="add--card"></button>
         </aside>
     </section>
