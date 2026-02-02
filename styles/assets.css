@@ -7,8 +7,27 @@
   width: 80px;
   height: 80px;
 }
-
-
+.btn{
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: none;
+  background-position: center;
+  background-size: cover;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    filter: drop-shadow(0 0 0.5px #00000027);
+    transform: scale(1);
+  }
+}
+.btn--minus{
+  background-image: url(../assets/icons/minus.svg);
+}
+.btn--plus{
+  background-image: url(../assets/icons/plus.svg);
+}
 
 
 

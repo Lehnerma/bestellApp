@@ -10,27 +10,22 @@ function renderCategorys() {
   for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
     if (categorys[categoryIndex] == "starters") {
       let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-
       renderDishes(containerRef, categorys[categoryIndex]);
     }
     if (categorys[categoryIndex] == "pasta") {
       let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-
       renderDishes(containerRef, categorys[categoryIndex]);
     }
     if (categorys[categoryIndex] == "pizzas") {
       let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-
       renderDishes(containerRef, categorys[categoryIndex]);
     }
     if (categorys[categoryIndex] == "desserts") {
       let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-
       renderDishes(containerRef, categorys[categoryIndex]);
     }
     if (categorys[categoryIndex] == "drinks") {
       let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-
       renderDishes(containerRef, categorys[categoryIndex]);
     }
   }
@@ -56,7 +51,7 @@ dishesRef.addEventListener("click", (element) => {
   }
 });
 
-// count up
+// count
 function count(dishId, dishCategory, btn) {
   for (let dishIndex = 0; dishIndex < ALL_DISHES[dishCategory].length; dishIndex++) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
@@ -94,4 +89,3 @@ function renderAmount(dishIndex, dishId, dishCategory) {
 //basket countDown
 //basket delet
 //basket local storage?
-//
