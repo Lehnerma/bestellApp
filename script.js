@@ -45,39 +45,47 @@ dishesRef.addEventListener("click", (element) => {
   let obj = element.target.closest(".dish");
   let dishId = obj.dataset.id;
   let dishCategory = obj.dataset.category;
-  const add = element.target.dataset;
+  const dataSet = element.target.dataset.btn;
+  console.log(dataSet);
 
-  if (add) {
-    countUp(dishId, dishCategory);
+  if (dataSet == "add") {
+    count(dishId, dishCategory, dataSet);
+  }
+  if (dataSet == "bin") {
+    count(dishId, dishCategory, dataSet);
   }
 });
 
 // count up
-function countUp(dishId, dishCategory) {
+function count(dishId, dishCategory, btn) {
   for (let dishIndex = 0; dishIndex < ALL_DISHES[dishCategory].length; dishIndex++) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
-      ALL_DISHES[dishCategory][dishIndex].amount++;
-      renderAmount(dishIndex, dishId, dishCategory);
-    }
-  }
-}
-//count down
-function countDown(dishId, dishCategory) {
-  for (let index = 0; index < ALL_DISHES[dishCategory].length; index++) {
-    if (dishId == ALL_DISHES[dishCategory][index].id) {
-      ALL_DISHES[dishCategory][dishId].amount--;
+      if (btn == "add") {
+        ALL_DISHES[dishCategory][dishIndex].amount++;
+        renderAmount(dishIndex, dishId, dishCategory);
+      } else if (btn == "down") {
+        ALL_DISHES[dishCategory][dishIndex].amount--;
+        // ALL_DISHES[dishCategory][dishIndex].amount = 0;
+        renderAmount(dishIndex, dishId, dishCategory);
+      } else if (btn == "bin") {
+        ALL_DISHES[dishCategory][dishIndex].amount = 0;
+        renderAmount(dishIndex, dishId, dishCategory);
+      }
     }
   }
 }
 // display amount
 function renderAmount(dishIndex, dishId, dishCategory) {
   let amountRef = document.getElementById("amount" + dishId);
+  let binRef = document.getElementById("bin" + dishId);
   amountRef.innerHTML = "";
   if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
     amountRef.classList.add("dnone");
-    ALL_DISHES[category][dishIndex].amount = 0;
+    binRef.classList.add("dnone");
+    amountRef.innerHTML = "added: " + ALL_DISHES[dishCategory][dishIndex].amount;
   } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
     amountRef.classList.remove("dnone");
+    binRef.classList.remove("dnone");
     amountRef.innerHTML = "added: " + ALL_DISHES[dishCategory][dishIndex].amount;
   }
 }
