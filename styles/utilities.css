@@ -43,6 +43,9 @@ main {
 .bg-primary{
   background-color: var(--bg-primary);
 }
+.price{
+  color: var(--text-price);
+}
 .dnone {
   display: none;
 }

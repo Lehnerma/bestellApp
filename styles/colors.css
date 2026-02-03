@@ -3,58 +3,41 @@
 
     --primary-light: #FF8A3D;
     --primary-dark: #C85A0F;
-    --primary-darker: #A04808;
-    
-    /* Komplementärfarbe (Blau-Grün) */
-    --secondary: #1F9FE7;
-    --secondary-light: #3DB4FF;
-    --secondary-dark: #0F7DC8;
-    
-    /* background */
+    --primary-darker: #a04808;
+    --text-price: #780c00;
+
     --bg-primary: #E76C1F;
     --bg-primary-50: #e76c1f7e;
+    --bg-secondary: #F8F9FA;
     --bg-lighter: #FFFFFF;
-    --bg-warm: #ffb84d8a;      /* Warmes Gelb-Orange */
-    --bg-red: #E74C3C;        /* Warmes Rot */
-    --bg-green: #27AE60;      /* Frisches Grün */
-
-    --bg-secondary: #F8F9FA;      /* Sekundärer Hintergrund */
-    --bg-warm2: #FFF5EE;       /* Warmer Hintergrund (passt zu Orange) */
-    --bg-dark: #2C3E50;           /* Dunkler Hintergrund */
-    
+    --bg-warm: #ffb84d8a;
+    --bg-green: #27AE60;
+    --bg-warm2: #FFF5EE;
+    --bg-dark: #2C3E50;
     /* Neutrale Farben */
-    --neutral-50: #FAFAFA;        /* Sehr helles Grau */
-    --neutral-100: #f5f5f5d9;       /* Helles Grau */
-    --neutral-200: #EEEEEE;       /* Hintergrund */
-    --neutral-300: #e0e0e097;       /* Borders */
-    --neutral-400: #bdbdbd86;       /* Deaktiviert */
-    --neutral-500: #9E9E9E;       /* Placeholder */
-    --neutral-600: #757575;       /* Sekundärtext */
-    --neutral-700: #616161;       /* Text */
-    --neutral-800: #424242;       /* Haupttext */
-    --neutral-900: #212121;       /* Dunkelster Text */
-    
-    /* Semantische Farben */
-    --success: #2ECC71;           /* Erfolg/Bestätigung */
-    --warning: #F39C12;           /* Warnung */
-    --error: #E74C3C;             /* Fehler */
-    --info: #3498DB;              /* Information */
-
-    /* Text */
-    --text-primary: #212121;      /* Haupttext */
-    --text-secondary: #757575;    /* Sekundärtext */
-    --text-tertiary: #9E9E9E;     /* Tertiärtext */
-    --text-inverse: #FFFFFF;      /* Text auf dunklem Hintergrund */
-    --text-on-primary: #FFFFFF;   /* Text auf Primary-Farbe */
-    
+    --neutral-50: #FAFAFA;
+    --neutral-100: #f5f5f5d9;  
+    --neutral-200: #EEEEEE;  
+    --neutral-300: #e0e0e097;  
+    --neutral-400: #bdbdbd86;    
+    --neutral-500: #9e9e9e94;       
+    --neutral-600: #757575;      
+    --neutral-700: #616161;      
+    --neutral-800: #424242;       
+    --neutral-900: #212121;       
     /* Schatten */
     --shadow-sm: 0 0px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 0px 8px rgba(0, 0, 0, 0.503);
     --shadow-lg: 0 10px 15px rgba(231, 108, 31, 0.15);
     --shadow-xl: 0 20px 25px rgba(231, 108, 31, 0.2);
-    
-    /* Verläufe */
-    --gradient-primary: linear-gradient(135deg, #E76C1F 0%, #FF8A3D 100%);
-    --gradient-warm: linear-gradient(135deg, #FFB84D 0%, #E76C1F 100%);
-    --gradient-sunset: linear-gradient(135deg, #E74C3C 0%, #E76C1F 50%, #FFB84D 100%);
+    /* Komplementärfarbe (Blau-Grün) */
+    --secondary: #1F9FE7;
+    --secondary-light: #3DB4FF;
+    --secondary-dark: #0F7DC8;
+    /* Text */
+    --text-primary: #212121;
+    --text-secondary: #757575; 
+    --text-price: #780c00; 
+    --text-inverse: #FFFFFF;
+    --text-on-primary: #FFFFFF;
   }

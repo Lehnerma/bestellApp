@@ -4,7 +4,6 @@ function init() {
   renderCategorys();
 }
 
-//render dishes
 function renderCategorys() {
   let categorys = Object.keys(ALL_DISHES);
   for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
@@ -30,37 +29,25 @@ function renderCategorys() {
     }
   }
 }
+
 function renderDishes(container, category) {
   for (let dishIndex = 0; dishIndex < ALL_DISHES[category].length; dishIndex++) {
     container.innerHTML += getDishTemplet(category, dishIndex);
   }
 }
 
-dishesRef.addEventListener("click", (element) => {
-  let obj = element.target.closest(".dish");
-  let dishId = obj.dataset.id;
-  let dishCategory = obj.dataset.category;
-  const dataSet = element.target.dataset.btn;
-  console.log(dataSet);
-
-  if (dataSet == "add") {
-    count(dishId, dishCategory, dataSet);
-  }
-  if (dataSet == "bin") {
-    count(dishId, dishCategory, dataSet);
-  }
-});
-
-// count
-function count(dishId, dishCategory, btn) {
+function counting(dishId, dishCategory, btn) {
   for (let dishIndex = 0; dishIndex < ALL_DISHES[dishCategory].length; dishIndex++) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
       if (btn == "add") {
         ALL_DISHES[dishCategory][dishIndex].amount++;
         renderAmount(dishIndex, dishId, dishCategory);
-      } else if (btn == "down") {
-        ALL_DISHES[dishCategory][dishIndex].amount--;
-        // ALL_DISHES[dishCategory][dishIndex].amount = 0;
+      } else if (btn == "minus") {
+        if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
+          ALL_DISHES[dishCategory][dishIndex].amount--;
+        } else {
+          ALL_DISHES[dishCategory][dishIndex].amount = 0;
+        }
         renderAmount(dishIndex, dishId, dishCategory);
       } else if (btn == "bin") {
         ALL_DISHES[dishCategory][dishIndex].amount = 0;
@@ -69,6 +56,7 @@ function count(dishId, dishCategory, btn) {
     }
   }
 }
+
 // display amount
 function renderAmount(dishIndex, dishId, dishCategory) {
   let amountRef = document.getElementById("amount" + dishId);
@@ -84,8 +72,34 @@ function renderAmount(dishIndex, dishId, dishCategory) {
     amountRef.innerHTML = "added: " + ALL_DISHES[dishCategory][dishIndex].amount;
   }
 }
-//add basket
-// basket countup
+
+dishesRef.addEventListener("click", (element) => {
+  const obj = element.target.closest(".dish");
+  const dishId = obj.dataset.id;
+  const dishCategory = obj.dataset.category;
+  const dataSet = element.target.dataset.btn;
+  
+  if (dataSet == "add") {
+    renderBasketItem(dishId, dishCategory);
+    counting(dishId, dishCategory, dataSet);
+  }
+  if (dataSet == "bin") {
+    counting(dishId, dishCategory, dataSet);
+  }
+});
+
+function renderBasketItem(dishID, dishCategory) {
+  let basketRef = document.getElementById("basket_items");
+  for (let dishIndex = 0; dishIndex < ALL_DISHES[dishCategory].length; dishIndex++) {
+    if (ALL_DISHES[dishCategory][dishIndex].id == dishID) {
+      if (ALL_DISHES[dishCategory][dishIndex].amount == 0) {
+        basketRef.innerHTML += getBasketItem(dishIndex, dishCategory);
+      }
+      console.log("test log");
+    }
+  }
+}
+//basket countup
 //basket countDown
 //basket delet
 //basket local storage?

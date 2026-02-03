@@ -14,22 +14,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-.sidebar--container {
-
-  position: relative;
-  justify-content: start;
-
-}
-.basket {
-  position: sticky;
-  top: 1rem;
-  background-color: var(--neutral-400);
-  border-radius: 3rem 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 1 auto;
-}
 .dish--container {
   display: flex;
   flex-direction: column;
@@ -44,23 +28,23 @@
   }
   padding: var(--spacing-sm);
   border-radius: 1rem;
-  .dish--img {
-    border-radius: 1rem;
-    width: 10rem;
-    height: 8rem;
-    object-fit: cover;
-    object-position: center;
-  }
-  .dish--info {
-    flex: 2;
-    padding: var(--spacing-md);
-  }
-  .dish--right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
+}
+.dish--img {
+  border-radius: 1rem;
+  width: 10rem;
+  height: 8rem;
+  object-fit: cover;
+  object-position: center;
+}
+.dish--info {
+  flex: 2;
+  padding: var(--spacing-md);
+}
+.dish--right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .category--icon {
@@ -88,12 +72,6 @@
   background-image: url(../assets//icons/drinks.svg);
 }
 
-.dish--btns {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .dish--added {
   background-color: var(--neutral-300);
   color: var(--primary-darker);
@@ -117,9 +95,10 @@
   }
 }
 
-.add{
+.add {
   background-image: url(../assets/icons/shopping-add.svg);
 }
-.bin{
+.bin {
   background-image: url(../assets/icons/bin.svg);
 }
+

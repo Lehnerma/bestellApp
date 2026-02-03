@@ -19,7 +19,7 @@
   }
   &:active {
     filter: drop-shadow(0 0 0.5px #00000027);
-    transform: scale(1);
+    transform: scale(0.99);
   }
 }
 .btn--minus{
@@ -29,6 +29,12 @@
   background-image: url(../assets/icons/plus.svg);
 }
 
+.dish--btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
 
 
 
