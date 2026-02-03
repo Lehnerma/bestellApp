@@ -61,17 +61,19 @@ dishesRef.addEventListener("click", (element) => {
 function counting(dishId, dishCategory, btn) {
   for (let dishIndex = 0; dishIndex < ALL_DISHES[dishCategory].length; dishIndex++) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
-      if (btn == "add") {
+      if (btn == "add" || btn == "plus") {
         ALL_DISHES[dishCategory][dishIndex].amount++;
-        renderBin(dishIndex, dishId, dishCategory);
-        renderAmount(dishIndex, dishId, dishCategory);
-        renderAmountBasket(dishIndex, dishId, dishCategory);
-      } else if (btn == "bin") {
-        ALL_DISHES[dishCategory][dishIndex].amount = 0;
-        renderBin(dishIndex, dishId, dishCategory);
-        renderAmount(dishIndex, dishId, dishCategory);
-        renderAmountBasket(dishIndex, dishId, dishCategory);
+      } else if (btn == "minus"){
+        ALL_DISHES[dishCategory][dishIndex].amount--;
       }
+      else if (btn == "bin") {
+        ALL_DISHES[dishCategory][dishIndex].amount = 0;
+      } else {
+        return
+      }
+      renderBin(dishIndex, dishId, dishCategory);
+      renderAmount(dishIndex, dishId, dishCategory);
+      renderAmountBasket(dishIndex, dishId, dishCategory);
     }
   }
 }
@@ -101,15 +103,37 @@ function renderBin(dishIndex, dishId, dishCategory) {
   }
 }
 
+function renderBasketBin(dishIndex, dishId, dishCategory) {
+  let binRef = document.getElementById("bin" + dishId);
+  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0){
+    binRef.classList.add("dnone");
+  } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0){
+    binRef.classList.remove("dnone");
+  }
+}
+
 function renderBasket(dishIndex, category) {
   if (ALL_DISHES[category][dishIndex].amount == 0) {
     basketItemsRef.innerHTML += getBasketItemTemplate(dishIndex, category);
   }
 }
 
+basketItemsRef.addEventListener("click", (element) => {
+  const basketItem = element.target.closest(".basket--item");
+  const dishIndex = basketItem.dataset.index;
+  const dishId = basketItem.dataset.id;
+  const dishCategory = basketItem.dataset.category;
+  const btn = element.target.dataset.btn;
+  console.log(dishIndex);
+  
+  counting(dishId, dishCategory, btn);
+  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0){
+    deletItem(basketItem)
+  }
+})
 
-
-//basket countup
-//basket countDown
 //basket delet
+function deletItem(dish){
+  dish.remove()
+}
 //basket local storage?

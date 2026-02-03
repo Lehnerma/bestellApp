@@ -1,9 +1,9 @@
 function getDishTemplet(category, dishIndex) {
-  return `<article class="dish"
+  return `
+<article class="dish"
   data-id="${ALL_DISHES[category][dishIndex].id}"
   data-index="${dishIndex}"
-  data-category="${category}">
-    
+  data-category="${category}">   
     <img src="${ALL_DISHES[category][dishIndex].url}" alt="dish foto" class="dish--img" />
     <section class="dish--info">
         <h4 class="title dish--title">${ALL_DISHES[category][dishIndex].name}</h4>
@@ -21,12 +21,15 @@ function getDishTemplet(category, dishIndex) {
 };
 
 function getBasketItemTemplate(dishIndex, category){
-    return `<article class="basket--item"
-    data-id=${ALL_DISHES[category][dishIndex].id}>
+    return `
+<article class="basket--item item"
+ data-id=${ALL_DISHES[category][dishIndex].id}
+ data-category="${category}"
+ data-index="${dishIndex}">  
     <h6 class="title basket--title">${ALL_DISHES[category][dishIndex].name}</h6>
     <section class="wrapper">
         <aside class="dish--btns text">
-            <button class="btn btn--minus data-btn="minus"></button>
+            <button class="btn bin" data-btn="minus"></button>
             <p class="text" id="basket_amount${ALL_DISHES[category][dishIndex].id}">${ALL_DISHES[category][dishIndex].amount}</p>
             <button class="btn btn--plus" data-btn="plus"></button>
         </aside>
