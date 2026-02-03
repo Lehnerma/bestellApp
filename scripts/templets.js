@@ -1,6 +1,7 @@
 function getDishTemplet(category, dishIndex) {
   return `<article class="dish"
   data-id="${ALL_DISHES[category][dishIndex].id}"
+  data-index="${dishIndex}"
   data-category="${category}">
     
     <img src="${ALL_DISHES[category][dishIndex].url}" alt="dish foto" class="dish--img" />
@@ -19,9 +20,9 @@ function getDishTemplet(category, dishIndex) {
 </article>`
 };
 
-function getBasketItem(dishIndex, category){
+function getBasketItemTemplate(dishIndex, category){
     return `<article class="basket--item"
-    data-id=${ALL_DISHES[category][dishIndex.id]}>
+    data-id=${ALL_DISHES[category][dishIndex].id}>
     <h6 class="title basket--title">${ALL_DISHES[category][dishIndex].name}</h6>
     <section class="wrapper">
         <aside class="dish--btns text">
