@@ -115,9 +115,10 @@
             <h3 class="title basket--title">🛒 Warenkorb</h3>
             <section class="basket--items" id="basket_items"></section>
 
-            <div role="divider" class="divider transparent"></div>
 
-            <section class="text caption-lg basket--price">
+
+            <section class="text caption-lg price--container">
+              <div role="divider" class="divider transparent"></div>
               <div class="basket--row">
                 <p class="">Zwischensumme:</p>
                 <p id="subtotal_price" class="price">0,00 €</p>
@@ -126,12 +127,14 @@
                 <p class="">Lieferung:</p>
                 <p id="delivery_price" class="price">5,00 €</p>
               </div>
+              <div role="divider" class="divider"></div>
+              <div class="title basket--row">
+                <p>Gesamtpreis:</p>
+                <p id="total_price" class="price">0,00€</p>
+              </div>
             </section>
-            <div role="divider" class="divider"></div>
-            <div>
-              <p>Gesamtpreis:</p>
-              <p id="total_price" class="price"></p>
-            </div>
+
+
           </article>
         </section>
       </article>

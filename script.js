@@ -150,4 +150,4 @@ function renderDishPrice(dishIndex, dishId, dishCategory) {
   priceRef.innerHTML = "";
   priceRef.innerHTML = Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(result)
 }
-//basket local storage?
+
