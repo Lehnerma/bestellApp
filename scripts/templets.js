@@ -23,13 +23,14 @@ function getDishTemplet(category, dishIndex) {
 function getBasketItemTemplate(dishIndex, category){
     return `
 <article class="basket--item item"
- data-id=${ALL_DISHES[category][dishIndex].id}
+id="item_${ALL_DISHES[category][dishIndex].id}"
+ data-id="${ALL_DISHES[category][dishIndex].id}"
  data-category="${category}"
  data-index="${dishIndex}">  
     <h6 class="title basket--title">${ALL_DISHES[category][dishIndex].name}</h6>
     <section class="wrapper">
         <aside class="dish--btns text">
-            <button class="btn bin" data-btn="minus"></button>
+            <button class="btn bin" id="basket_bin${ALL_DISHES[category][dishIndex].id}" data-btn="minus"></button>
             <p class="text" id="basket_amount${ALL_DISHES[category][dishIndex].id}">${ALL_DISHES[category][dishIndex].amount}</p>
             <button class="btn btn--plus" data-btn="plus"></button>
         </aside>

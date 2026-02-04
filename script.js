@@ -63,15 +63,17 @@ function counting(dishId, dishCategory, btn) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
       if (btn == "add" || btn == "plus") {
         ALL_DISHES[dishCategory][dishIndex].amount++;
-      } else if (btn == "minus"){
+      } else if (btn == "minus") {
         ALL_DISHES[dishCategory][dishIndex].amount--;
-      }
-      else if (btn == "bin") {
+      } else if (btn == "bin") {
+        const basketRef = document.getElementById("item_" + dishId);
         ALL_DISHES[dishCategory][dishIndex].amount = 0;
+        deletBasketItem(basketRef);
       } else {
-        return
+        return;
       }
       renderBin(dishIndex, dishId, dishCategory);
+      renderBasketBin(dishIndex, dishId, dishCategory);
       renderAmount(dishIndex, dishId, dishCategory);
       renderAmountBasket(dishIndex, dishId, dishCategory);
     }
@@ -90,25 +92,29 @@ function renderAmount(dishIndex, dishId, dishCategory) {
 }
 function renderAmountBasket(dishIndex, dishId, dishCategory) {
   let basketAmountRef = document.getElementById("basket_amount" + dishId);
-  basketAmountRef.innerHTML = '';
-  basketAmountRef.innerHTML = ALL_DISHES[dishCategory][dishIndex].amount;
+  if (basketAmountRef) {
+    basketAmountRef.innerHTML = "";
+    basketAmountRef.innerHTML = ALL_DISHES[dishCategory][dishIndex].amount;
+  }
 }
 
 function renderBin(dishIndex, dishId, dishCategory) {
   let binRef = document.getElementById("bin" + dishId);
-  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0){
+  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
     binRef.classList.add("dnone");
-  } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0){
+  } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
     binRef.classList.remove("dnone");
   }
 }
 
 function renderBasketBin(dishIndex, dishId, dishCategory) {
-  let binRef = document.getElementById("bin" + dishId);
-  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0){
-    binRef.classList.add("dnone");
-  } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0){
-    binRef.classList.remove("dnone");
+  let binRef = document.getElementById("basket_bin" + dishId);
+  if (ALL_DISHES[dishCategory][dishIndex].amount == 1) {
+    binRef.classList.add("bin");
+    binRef.classList.remove("btn--minus");
+  } else if (ALL_DISHES[dishCategory][dishIndex].amount > 1) {
+    binRef.classList.remove("bin");
+    binRef.classList.add("btn--minus");
   }
 }
 
@@ -124,16 +130,14 @@ basketItemsRef.addEventListener("click", (element) => {
   const dishId = basketItem.dataset.id;
   const dishCategory = basketItem.dataset.category;
   const btn = element.target.dataset.btn;
-  console.log(dishIndex);
-  
   counting(dishId, dishCategory, btn);
-  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0){
-    deletItem(basketItem)
+  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
+    deletBasketItem(basketItem);
   }
-})
+});
 
 //basket delet
-function deletItem(dish){
-  dish.remove()
+function deletBasketItem(dish) {
+  dish.remove();
 }
 //basket local storage?
