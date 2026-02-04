@@ -21,13 +21,12 @@ main {
   color: black;
 }
 
-.container-row {
+.container--row {
   display: flex;
   justify-content: center;
-  max-width: var(--max-dp-width);
-  width: 100%;
+
 }
-.container-col {
+.container--col {
   display: flex;
   flex-direction: column;
   align-items: center;

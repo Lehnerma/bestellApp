@@ -33,11 +33,11 @@
       </article>
     </header>
     <main>
-      <article role="restaurant image" class="container-col">
+      <article role="restaurant image" class="container--col">
         <img src="./assets/img/pasta-bg.jpg" alt="Pasta Tomatos" class="main-bg" />
         <img src="./assets/icons/spaghetti.png" alt="Spagetti Logo" class="restaurant-logo" />
       </article>
-      <article role="Restaurant Name und Rating" class="container-col restaurant-title">
+      <article role="Restaurant Name und Rating" class="container--col restaurant-title">
         <h2 class="title tx-center">Veni Vidi Pizzi</h2>
         <h4 class="title tx-center">Ich kam - sah - und aß Pizza</h4>
         <aside class="star-rating-container bg-md">
@@ -113,9 +113,25 @@
         <section class="sidebar--container" role="basket for dishes">
           <article class="basket">
             <h3 class="title basket--title">🛒 Warenkorb</h3>
-            <section class="basket--items" id="basket_items">
+            <section class="basket--items" id="basket_items"></section>
 
+            <div role="divider" class="divider transparent"></div>
+
+            <section class="text caption-lg basket--price">
+              <div class="basket--row">
+                <p class="">Zwischensumme:</p>
+                <p id="subtotal_price" class="price">0,00 €</p>
+              </div>
+              <div class="basket--row">
+                <p class="">Lieferung:</p>
+                <p id="delivery_price" class="price">5,00 €</p>
+              </div>
             </section>
+            <div role="divider" class="divider"></div>
+            <div>
+              <p>Gesamtpreis:</p>
+              <p id="total_price" class="price"></p>
+            </div>
           </article>
         </section>
       </article>

@@ -10,7 +10,7 @@ function getDishTemplet(category, dishIndex) {
         <p class="text dish-desc">${ALL_DISHES[category][dishIndex].info}</p>
     </section>
     <section class="dish--right">
-        <p class="dish--price price">${ALL_DISHES[category][dishIndex].price}0 €</p>
+        <p class="dish--price price">${Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(ALL_DISHES[category][dishIndex].price)}</p>
         <aside class="dish--btns">
             <button class="btn--card add" data-btn="add"></button>
             <p class="text dish--added dnone" id="amount${ALL_DISHES[category][dishIndex].id}">added</p>
@@ -34,7 +34,7 @@ id="item_${ALL_DISHES[category][dishIndex].id}"
             <p class="text" id="basket_amount${ALL_DISHES[category][dishIndex].id}">${ALL_DISHES[category][dishIndex].amount}</p>
             <button class="btn btn--plus" data-btn="plus"></button>
         </aside>
-        <p class="text price">Function</p>
+        <p class="text price" id="price${ALL_DISHES[category][dishIndex].id}">price</p>
     </section>
 </article>`
 }; 

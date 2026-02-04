@@ -1,5 +1,8 @@
 let dishesRef = document.getElementById("dishes");
 let basketItemsRef = document.getElementById("basket_items");
+let subtotalPrice = document.getElementById("subtotal_price");
+let deliveryPrice = document.getElementById("delivery_price");
+let totalPrice = document.getElementById("total_price");
 
 function init() {
   renderCategorys();
@@ -63,14 +66,14 @@ function counting(dishId, dishCategory, btn) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
       if (btn == "add" || btn == "plus") {
         ALL_DISHES[dishCategory][dishIndex].amount++;
+        renderDishPrice(dishIndex, dishId, dishCategory);
       } else if (btn == "minus") {
         ALL_DISHES[dishCategory][dishIndex].amount--;
+        renderDishPrice(dishIndex, dishId, dishCategory);
       } else if (btn == "bin") {
         const basketRef = document.getElementById("item_" + dishId);
         ALL_DISHES[dishCategory][dishIndex].amount = 0;
         deletBasketItem(basketRef);
-      } else {
-        return;
       }
       renderBin(dishIndex, dishId, dishCategory);
       renderBasketBin(dishIndex, dishId, dishCategory);
@@ -136,8 +139,15 @@ basketItemsRef.addEventListener("click", (element) => {
   }
 });
 
-//basket delet
 function deletBasketItem(dish) {
   dish.remove();
+}
+
+//render dish price
+function renderDishPrice(dishIndex, dishId, dishCategory) {
+  let priceRef = document.getElementById("price" + dishId);
+  let result = ALL_DISHES[dishCategory][dishIndex].price * ALL_DISHES[dishCategory][dishIndex].amount;
+  priceRef.innerHTML = "";
+  priceRef.innerHTML = Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(result)
 }
 //basket local storage?

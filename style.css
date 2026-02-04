@@ -106,3 +106,22 @@ main nav {
   align-items: center;
 
 }
+.basket--price{
+  width: 80%;
+}
+
+.divider{
+  background-color: var(--neutral-600);
+  width: 80%;
+  height: 1px;
+  margin: var(--spacing-sm) 0;
+}
+.transparent{
+  opacity: 0.2;
+}
+.basket--row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
