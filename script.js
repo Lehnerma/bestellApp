@@ -2,10 +2,12 @@ let dishesRef = document.getElementById("dishes");
 let basketItemsRef = document.getElementById("basket_items");
 let subtotalPrice = document.getElementById("subtotal_price");
 let deliveryPrice = document.getElementById("delivery_price");
+let deliveryFee = 5;
 let totalPrice = document.getElementById("total_price");
 
 function init() {
   renderCategorys();
+  renderDeliveryPrice()
 }
 
 function getCategorys(obj) {
@@ -79,6 +81,7 @@ function counting(dishId, dishCategory, btn) {
       renderBasketBin(dishIndex, dishId, dishCategory);
       renderAmount(dishIndex, dishId, dishCategory);
       renderAmountBasket(dishIndex, dishId, dishCategory);
+      renderTotalPrice()
     }
   }
 }
@@ -151,3 +154,19 @@ function renderDishPrice(dishIndex, dishId, dishCategory) {
   priceRef.innerHTML = Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(result)
 }
 
+function renderDeliveryPrice(){
+  deliveryPrice.innerHTML = Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(deliveryFee);
+}
+function renderTotalPrice(){
+  let subResult = 0;
+  let categorys = getCategorys(ALL_DISHES);
+  for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
+    for (let dishIndex = 0; dishIndex < ALL_DISHES[categorys[categoryIndex]].length; dishIndex++) {
+      if (ALL_DISHES[categorys[categoryIndex]][dishIndex].amount >= 1) {
+        subResult += ALL_DISHES[categorys[categoryIndex]][dishIndex].amount * ALL_DISHES[categorys[categoryIndex]][dishIndex].price;
+      }
+    }
+  }
+  subtotalPrice.innerHTML = Intl.NumberFormat("de-DE", {style:"currency", currency:"EUR"}).format(subResult);
+  totalPrice.innerHTML = Intl.NumberFormat("de-DE", {style:"currency", currency:"EUR"}).format(subResult + deliveryFee);
+}
