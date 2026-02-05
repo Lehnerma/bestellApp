@@ -1,4 +1,4 @@
-.logo{
+.logo {
   display: block;
   background: url(../assets/icons/favicon.png);
   object-fit: cover;
@@ -7,13 +7,14 @@
   width: 80px;
   height: 80px;
 }
-.btn{
+.btn {
   width: 2rem;
   height: 2rem;
   border: none;
   background: none;
   background-position: center;
   background-size: cover;
+  transition: all 275ms ease-in-out;
   &:hover {
     transform: scale(1.05);
   }
@@ -22,10 +23,10 @@
     transform: scale(0.99);
   }
 }
-.btn--minus{
+.btn--minus {
   background-image: url(../assets/icons/minus.svg);
 }
-.btn--plus{
+.btn--plus {
   background-image: url(../assets/icons/plus.svg);
 }
 
@@ -36,11 +37,25 @@
   gap: 0.5rem;
 }
 
-
-
-
-
-
+.order--btn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-sm);
+  background-color: var(--primary-light);
+  border: none;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 275ms ease-in-out;
+  &:hover{
+    transform: scale(1.02);
+  }
+  &:active{
+    transform: scale(1);
+  }
+}
 
 /*
 dynamisches erstellen des einkaufswagen am schluss.

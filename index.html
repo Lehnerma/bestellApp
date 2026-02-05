@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon" />
-
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./styles/utilities.css" />
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/utilities.css" />
     <link rel="stylesheet" href="./styles/dishes-grid.css" />
     <link rel="stylesheet" href="./styles/rating.css" />
+
     <script src="./scripts/db.js"></script>
     <script src="./scripts/templets.js"></script>
 
@@ -115,8 +115,6 @@
             <h3 class="title basket--title">🛒 Warenkorb</h3>
             <section class="basket--items" id="basket_items"></section>
 
-
-
             <section class="text caption-lg price--container">
               <div role="divider" class="divider transparent"></div>
               <div class="basket--row">
@@ -130,11 +128,13 @@
               <div role="divider" class="divider"></div>
               <div class="title basket--row">
                 <p>Gesamtpreis:</p>
-                <p id="total_price" class="price">0,00€</p>
+                <p id="total_price" class="price"></p>
               </div>
+              <button id="order_btn" class="order--btn body-lg">
+                Bezahlen
+                <p id="order_btn_price" class="body-sm price">( 0,00 € )</p>
+              </button>
             </section>
-
-
           </article>
         </section>
       </article>

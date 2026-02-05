@@ -87,6 +87,7 @@
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  transition: all 275ms ease-in-out;
   &:hover {
     transform: scale(1.05);
   }

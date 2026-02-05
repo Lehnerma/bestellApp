@@ -4,6 +4,9 @@ let subtotalPrice = document.getElementById("subtotal_price");
 let deliveryPrice = document.getElementById("delivery_price");
 let deliveryFee = 5;
 let totalPrice = document.getElementById("total_price");
+let orderBtn = document.getElementById("order_btn");
+let orderBtnPrice = document.getElementById("order_btn_price");
+
 
 function init() {
   renderCategorys();
@@ -146,7 +149,6 @@ function deletBasketItem(dish) {
   dish.remove();
 }
 
-//render dish price
 function renderDishPrice(dishIndex, dishId, dishCategory) {
   let priceRef = document.getElementById("price" + dishId);
   let result = ALL_DISHES[dishCategory][dishIndex].price * ALL_DISHES[dishCategory][dishIndex].amount;
@@ -167,6 +169,8 @@ function renderTotalPrice(){
       }
     }
   }
+  let totalResult = Intl.NumberFormat("de-DE", {style:"currency", currency:"EUR"}).format(subResult + deliveryFee);
   subtotalPrice.innerHTML = Intl.NumberFormat("de-DE", {style:"currency", currency:"EUR"}).format(subResult);
-  totalPrice.innerHTML = Intl.NumberFormat("de-DE", {style:"currency", currency:"EUR"}).format(subResult + deliveryFee);
+  totalPrice.innerHTML = totalResult;
+  orderBtnPrice.innerHTML = totalResult;
 }
