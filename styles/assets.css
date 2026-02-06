@@ -49,30 +49,12 @@
   border-radius: 2rem;
   box-shadow: var(--shadow-sm);
   transition: all 275ms ease-in-out;
-  &:hover{
+  &:hover {
     transform: scale(1.02);
   }
-  &:active{
+  &:active {
     transform: scale(1);
   }
 }
 
-/*
-dynamisches erstellen des einkaufswagen am schluss.
-.img-btn {
-    background: none;
-    border: solid 1px;
-  }
-  .img-btn img {
-    position: relative;
-    width: 250px;
-    cursor: pointer;
-    background: none;
-    transition: all 200ms ease-in-out;
-  }
 
-  body::after {
-    content: url("./assets/icons/add.gif");
-    display: none;
-  }
-   */

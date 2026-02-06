@@ -7,10 +7,9 @@ let totalPrice = document.getElementById("total_price");
 let orderBtn = document.getElementById("order_btn");
 let orderBtnPrice = document.getElementById("order_btn_price");
 
-
 function init() {
   renderCategorys();
-  renderDeliveryPrice()
+  renderDeliveryPrice();
 }
 
 function getCategorys(obj) {
@@ -84,7 +83,7 @@ function counting(dishId, dishCategory, btn) {
       renderBasketBin(dishIndex, dishId, dishCategory);
       renderAmount(dishIndex, dishId, dishCategory);
       renderAmountBasket(dishIndex, dishId, dishCategory);
-      renderTotalPrice()
+      renderTotalPrice();
     }
   }
 }
@@ -153,13 +152,13 @@ function renderDishPrice(dishIndex, dishId, dishCategory) {
   let priceRef = document.getElementById("price" + dishId);
   let result = ALL_DISHES[dishCategory][dishIndex].price * ALL_DISHES[dishCategory][dishIndex].amount;
   priceRef.innerHTML = "";
-  priceRef.innerHTML = Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(result)
+  priceRef.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(result);
 }
 
-function renderDeliveryPrice(){
-  deliveryPrice.innerHTML = Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(deliveryFee);
+function renderDeliveryPrice() {
+  deliveryPrice.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(deliveryFee);
 }
-function renderTotalPrice(){
+function renderTotalPrice() {
   let subResult = 0;
   let categorys = getCategorys(ALL_DISHES);
   for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
@@ -169,8 +168,21 @@ function renderTotalPrice(){
       }
     }
   }
-  let totalResult = Intl.NumberFormat("de-DE", {style:"currency", currency:"EUR"}).format(subResult + deliveryFee);
-  subtotalPrice.innerHTML = Intl.NumberFormat("de-DE", {style:"currency", currency:"EUR"}).format(subResult);
+  let totalResult = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult + deliveryFee);
+  subtotalPrice.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult);
   totalPrice.innerHTML = totalResult;
   orderBtnPrice.innerHTML = totalResult;
 }
+
+let DIALOG = document.getElementById("dialog");
+let dialogBtn = document.getElementById("dialog_btn");
+
+orderBtn.addEventListener("click", (element) => {
+  DIALOG.showModal();
+});
+
+dialog.addEventListener("click", (element) => {
+  if (element.target == DIALOG || element.target == dialogBtn) {
+    DIALOG.close();
+  }
+});

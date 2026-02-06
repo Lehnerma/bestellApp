@@ -96,7 +96,6 @@ main nav {
 }
 
 
-
 .basket--items{
   display: flex;
   flex-direction: column;
@@ -106,6 +105,9 @@ main nav {
   scrollbar-width: thin;
   scrollbar-color: var(--bg-warm) var(--neutral-100);
   width: 90%;
+  h6{
+    padding-bottom: 1rem;
+  }
 }
 
 .basket--item{

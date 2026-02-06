@@ -6,10 +6,11 @@
     <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/utilities.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
-    <link rel="stylesheet" href="./styles/utilities.css" />
     <link rel="stylesheet" href="./styles/dishes-grid.css" />
+    <link rel="stylesheet" href="./styles/dialog.css" />
     <link rel="stylesheet" href="./styles/rating.css" />
 
     <script src="./scripts/db.js"></script>
@@ -132,12 +133,23 @@
               </div>
               <button id="order_btn" class="order--btn body-lg">
                 Bezahlen
-                <p id="order_btn_price" class="body-sm price">( 0,00 € )</p>
+                <p id="order_btn_price" class="body-sm price"></p>
               </button>
             </section>
           </article>
         </section>
       </article>
+
+      <dialog id="dialog" class="dialog">
+        <header>
+          <button id="dialog_btn" class="dialog--btn btn"></button>
+          <img src="./assets/icons/frying-pan.gif" alt="schwenkende pfannen animation" />
+        </header>
+        <main>
+          <h1 class="titel">Die Bestellung wurde erfolgreich Übermittelt!</h1>
+          <p class="text">Wir bereiten gerade deine Bestellung zu <br> und Benachrichtigen dich wenn der Fahrer auf dem Weg ist!</p>
+        </main>
+      </dialog>
     </main>
     <footer>
       <article class="title body-lg">
