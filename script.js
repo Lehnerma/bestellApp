@@ -6,6 +6,8 @@ let deliveryFee = 5;
 let totalPrice = document.getElementById("total_price");
 let orderBtn = document.getElementById("order_btn");
 let orderBtnPrice = document.getElementById("order_btn_price");
+let DIALOG = document.getElementById("dialog");
+let dialogBtn = document.getElementById("dialog_btn");
 
 function init() {
   renderCategorys();
@@ -63,6 +65,7 @@ dishesRef.addEventListener("click", (element) => {
   if (dataSet == "bin") {
     counting(dishId, dishCategory, dataSet);
   }
+  hideBasekt();
 });
 
 function counting(dishId, dishCategory, btn) {
@@ -174,11 +177,9 @@ function renderTotalPrice() {
   orderBtnPrice.innerHTML = totalResult;
 }
 
-let DIALOG = document.getElementById("dialog");
-let dialogBtn = document.getElementById("dialog_btn");
-
 orderBtn.addEventListener("click", (element) => {
   DIALOG.showModal();
+  reset();
 });
 
 dialog.addEventListener("click", (element) => {
@@ -186,3 +187,30 @@ dialog.addEventListener("click", (element) => {
     DIALOG.close();
   }
 });
+
+function reset() {
+  basketItemsRef.innerHTML = "";
+  amountReset();
+  renderTotalPrice();
+  hideBasekt();
+}
+
+function amountReset() {
+  let categorys = getCategorys(ALL_DISHES);
+  for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
+    for (let dishIndex = 0; dishIndex < ALL_DISHES[categorys[categoryIndex]].length; dishIndex++) {
+      ALL_DISHES[categorys[categoryIndex]][dishIndex].amount = 0;
+      renderBin(dishIndex, ALL_DISHES[categorys[categoryIndex]][dishIndex].id, categorys[categoryIndex]);
+      renderAmount(dishIndex, ALL_DISHES[categorys[categoryIndex]][dishIndex].id, categorys[categoryIndex]);
+    }
+  }
+}
+
+function hideBasekt() {
+  const basket = document.getElementById("basket");
+  if (!basketItemsRef.innerHTML) {
+    basket.classList.add("dnone");
+  } else {
+    basket.classList.remove("dnone");
+  }
+}

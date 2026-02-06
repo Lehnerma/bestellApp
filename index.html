@@ -111,12 +111,12 @@
           </section>
         </div>
         <!-- basket section -->
-        <section class="sidebar--container" role="basket for dishes">
+        <section id="basket" class="sidebar--container dnone" role="basket for dishes">
           <article class="basket">
             <h3 class="title basket--title">🛒 Warenkorb</h3>
             <section class="basket--items" id="basket_items"></section>
 
-            <section class="text caption-lg price--container">
+            <section id="basket_price_section" class="text caption-lg price--container">
               <div role="divider" class="divider transparent"></div>
               <div class="basket--row">
                 <p class="">Zwischensumme:</p>
@@ -157,6 +157,7 @@
         <a href="#" class="noLink">Imprint</a>
         <a href="#" class="noLink">Cookie Preferences</a>
       </article>
+      <button onclick="hideBasekt()">test</button>
     </footer>
 
     <script src="script.js"></script>
