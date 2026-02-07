@@ -110,6 +110,7 @@ function counting(dishId, dishCategory, btn) {
       renderAmount(dishIndex, dishId, dishCategory);
       renderAmountBasket(dishIndex, dishId, dishCategory);
       renderTotalPrice();
+      getTotalAmount()
     }
   }
 }
@@ -191,6 +192,7 @@ function reset() {
   amountReset();
   renderTotalPrice();
   hideBasekt();
+  getTotalAmount()
 }
 
 function amountReset() {
@@ -215,4 +217,18 @@ function hideBasekt() {
   } else {
     basket.classList.remove("dnone");
   }
+}
+
+function getTotalAmount(){
+  let categorys = getCategorys(ALL_DISHES);
+  let totalAmount = 0;
+  let badgetRef = document.getElementById("badget")
+  for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
+    for (let dishIndex = 0; dishIndex < ALL_DISHES[categorys[categoryIndex]].length; dishIndex++) {
+      totalAmount += ALL_DISHES[categorys[categoryIndex]][dishIndex].amount
+    }
+  }
+  console.log(totalAmount);
+  badgetRef.innerText = '';
+  badgetRef.innerText = totalAmount;
 }
