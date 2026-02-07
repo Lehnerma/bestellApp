@@ -183,7 +183,7 @@ const ALL_DISHES = {
       id: 18,
       name: "Espresso ToGo",
       price: 3.80,
-      info: "Italienischer kräftigung nach einem langen Tag am Computer",
+      info: "Italienische Kräftigung nach einem langen Tag am Computer",
       url: "../assets/img/coffee.jpg",
       amount: 0,
     },

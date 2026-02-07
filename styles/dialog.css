@@ -15,6 +15,9 @@
     main{
         h1{
             padding: var(--spacing-sm);
+            @media (max-width: 600px) {
+                text-align: center;
+            }
         }
         p{
             width: 80%;

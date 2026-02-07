@@ -26,11 +26,7 @@
           <a href="./index.html" class="logo"></a>
           <a href="" class="noLink"><h1 class="title">Bestell App</h1></a>
         </section>
-        <section role="burger-menu">
-          - <br />
-          - <br />
-          -
-        </section>
+        <span role="burger-menu" class="burger"> </span>
       </article>
     </header>
     <main>
@@ -57,60 +53,49 @@
       </article>
 
       <nav class="body-lg title grid--header">
-        <a href="#" class="noLink">Vorspeisen</a>
-        <a href="#" class="noLink">Pasta</a>
-        <a href="#" class="noLink">Pizza</a>
-        <a href="#" class="noLink">Dessert</a>
-        <a href="#" class="noLink">Getränke</a>
+        <a href="#starters" class="noLink">Vorspeisen</a>
+        <a href="#pasta" class="noLink">Pasta</a>
+        <a href="#pizza" class="noLink">Pizza</a>
+        <a href="#dessert" class="noLink">Dessert</a>
+        <a href="#drinks" class="noLink">Getränke</a>
       </nav>
 
       <article class="grid--container">
         <div role="dishes grid left" id="dishes">
-          <section class="grid--header bg-primary">
+          <section id="starters" class="grid--header bg-primary">
             <span class="category--icon starter"></span>
             <h4 class="category--title title">Vorspeisen</h4>
           </section>
 
-          <section class="dish--container" id="starters_container">
-            <!-- dynamic creation from js -->
-          </section>
-          <section class="grid--header bg-primary">
+          <section class="dish--container" id="starters_container"></section>
+          <section id="pasta" class="grid--header bg-primary">
             <span class="category--icon pasta"></span>
             <h4 class="category--title title">Pasta</h4>
           </section>
 
-          <section class="dish--container" id="pasta_container">
-            <!-- dynamic creation from js -->
-          </section>
+          <section class="dish--container" id="pasta_container"></section>
 
-          <section class="grid--header bg-primary">
+          <section id="pizza" class="grid--header bg-primary">
             <span class="category--icon pizza"></span>
             <h4 class="category--title title">Pizza</h4>
           </section>
 
-          <section class="dish--container" id="pizzas_container">
-            <!-- dynamic creation from js -->
-          </section>
+          <section class="dish--container" id="pizzas_container"></section>
 
-          <section class="grid--header bg-primary">
+          <section id="dessert" class="grid--header bg-primary">
             <span class="category--icon dessert"></span>
             <h4 class="category--title title">Dessert</h4>
           </section>
 
-          <section class="dish--container" id="desserts_container">
-            <!-- dynamic creation from js -->
-          </section>
+          <section class="dish--container" id="desserts_container"></section>
 
-          <section class="grid--header bg-primary">
+          <section id="drinks" class="grid--header bg-primary">
             <span class="category--icon drinks"></span>
             <h4 class="category--title title">Getränke</h4>
           </section>
 
-          <section class="dish--container" id="drinks_container">
-            <!-- dynamic creation from js -->
-          </section>
+          <section class="dish--container" id="drinks_container"></section>
         </div>
-        <!-- basket section -->
         <section id="basket" class="sidebar--container dnone" role="basket for dishes">
           <article class="basket">
             <h3 class="title basket--title">🛒 Warenkorb</h3>
@@ -147,19 +132,27 @@
         </header>
         <main>
           <h1 class="titel">Die Bestellung wurde erfolgreich Übermittelt!</h1>
-          <p class="text">Wir bereiten gerade deine Bestellung zu <br> und Benachrichtigen dich wenn der Fahrer auf dem Weg ist!</p>
+          <p class="text">
+            Wir bereiten gerade deine Bestellung zu <br />
+            und Benachrichtigen dich wenn der Fahrer auf dem Weg ist!
+          </p>
         </main>
       </dialog>
     </main>
+
     <footer>
-      <article class="title body-lg">
+      <article class="title body-lg footer-section">
         <a href="#" class="noLink">©Veni Vidi Pizzi 2026</a>
         <a href="#" class="noLink">Imprint</a>
         <a href="#" class="noLink">Cookie Preferences</a>
       </article>
-      <button onclick="hideBasekt()">test</button>
     </footer>
-
+    <nav class="bottom-nav">
+      <a href="#" class="noLink bottom-nav-item"></a>
+      <a href="#" class="noLink bottom-nav-item"></a>
+      <a href="#" class="noLink bottom-nav-item"></a>
+      <a href="#" class="noLink bottom-nav-item"></a>
+    </nav>
     <script src="script.js"></script>
   </body>
 </html>

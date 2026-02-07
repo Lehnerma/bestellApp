@@ -14,6 +14,46 @@ function init() {
   renderDeliveryPrice();
 }
 
+dishesRef.addEventListener("click", (element) => {
+  const obj = element.target.closest(".dish");
+  const dishIndex = obj.dataset.index;
+  const dishId = obj.dataset.id;
+  const dishCategory = obj.dataset.category;
+  const dataSet = element.target.dataset.btn;
+
+  if (dataSet == "add") {
+    renderBasket(dishIndex, dishCategory);
+    counting(dishId, dishCategory, dataSet);
+  }
+  if (dataSet == "bin") {
+    counting(dishId, dishCategory, dataSet);
+  }
+  hideBasekt();
+});
+
+basketItemsRef.addEventListener("click", (element) => {
+  const basketItem = element.target.closest(".basket--item");
+  const dishIndex = basketItem.dataset.index;
+  const dishId = basketItem.dataset.id;
+  const dishCategory = basketItem.dataset.category;
+  const btn = element.target.dataset.btn;
+  counting(dishId, dishCategory, btn);
+  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
+    deletBasketItem(basketItem);
+  }
+});
+
+orderBtn.addEventListener("click", (element) => {
+  DIALOG.showModal();
+  reset();
+});
+
+DIALOG.addEventListener("click", (element) => {
+  if (element.target == DIALOG || element.target == dialogBtn) {
+    DIALOG.close();
+  }
+});
+
 function getCategorys(obj) {
   let categorys = Object.keys(obj);
   return categorys;
@@ -51,23 +91,6 @@ function renderDishes(container, category) {
   }
 }
 
-dishesRef.addEventListener("click", (element) => {
-  const obj = element.target.closest(".dish");
-  const dishIndex = obj.dataset.index;
-  const dishId = obj.dataset.id;
-  const dishCategory = obj.dataset.category;
-  const dataSet = element.target.dataset.btn;
-
-  if (dataSet == "add") {
-    renderBasket(dishIndex, dishCategory);
-    counting(dishId, dishCategory, dataSet);
-  }
-  if (dataSet == "bin") {
-    counting(dishId, dishCategory, dataSet);
-  }
-  hideBasekt();
-});
-
 function counting(dishId, dishCategory, btn) {
   for (let dishIndex = 0; dishIndex < ALL_DISHES[dishCategory].length; dishIndex++) {
     if (dishId == ALL_DISHES[dishCategory][dishIndex].id) {
@@ -101,6 +124,7 @@ function renderAmount(dishIndex, dishId, dishCategory) {
   }
   amountRef.innerHTML = "added: " + ALL_DISHES[dishCategory][dishIndex].amount;
 }
+
 function renderAmountBasket(dishIndex, dishId, dishCategory) {
   let basketAmountRef = document.getElementById("basket_amount" + dishId);
   if (basketAmountRef) {
@@ -135,22 +159,6 @@ function renderBasket(dishIndex, category) {
   }
 }
 
-basketItemsRef.addEventListener("click", (element) => {
-  const basketItem = element.target.closest(".basket--item");
-  const dishIndex = basketItem.dataset.index;
-  const dishId = basketItem.dataset.id;
-  const dishCategory = basketItem.dataset.category;
-  const btn = element.target.dataset.btn;
-  counting(dishId, dishCategory, btn);
-  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
-    deletBasketItem(basketItem);
-  }
-});
-
-function deletBasketItem(dish) {
-  dish.remove();
-}
-
 function renderDishPrice(dishIndex, dishId, dishCategory) {
   let priceRef = document.getElementById("price" + dishId);
   let result = ALL_DISHES[dishCategory][dishIndex].price * ALL_DISHES[dishCategory][dishIndex].amount;
@@ -161,6 +169,7 @@ function renderDishPrice(dishIndex, dishId, dishCategory) {
 function renderDeliveryPrice() {
   deliveryPrice.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(deliveryFee);
 }
+
 function renderTotalPrice() {
   let subResult = 0;
   let categorys = getCategorys(ALL_DISHES);
@@ -171,22 +180,11 @@ function renderTotalPrice() {
       }
     }
   }
-  let totalResult = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult + deliveryFee);
   subtotalPrice.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult);
+  let totalResult = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult + deliveryFee);
   totalPrice.innerHTML = totalResult;
   orderBtnPrice.innerHTML = totalResult;
 }
-
-orderBtn.addEventListener("click", (element) => {
-  DIALOG.showModal();
-  reset();
-});
-
-dialog.addEventListener("click", (element) => {
-  if (element.target == DIALOG || element.target == dialogBtn) {
-    DIALOG.close();
-  }
-});
 
 function reset() {
   basketItemsRef.innerHTML = "";
@@ -204,6 +202,10 @@ function amountReset() {
       renderAmount(dishIndex, ALL_DISHES[categorys[categoryIndex]][dishIndex].id, categorys[categoryIndex]);
     }
   }
+}
+
+function deletBasketItem(dish) {
+  dish.remove();
 }
 
 function hideBasekt() {

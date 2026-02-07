@@ -1,18 +1,10 @@
 :root {
     /* Hauptfarbe */
-
     --primary-light: #FF8A3D;
     --primary-dark: #C85A0F;
     --primary-darker: #a04808;
     --text-price: #780c00;
-
     --bg-primary: #E76C1F;
-    --bg-primary-50: #e76c1f7e;
-    --bg-secondary: #F8F9FA;
-    --bg-lighter: #FFFFFF;
-    --bg-warm: #ffb84d8a;
-    --bg-green: #27AE60;
-    --bg-warm2: #FFF5EE;
     --bg-dark: #2C3E50;
     /* Neutrale Farben */
     --neutral-50: #FAFAFA;
