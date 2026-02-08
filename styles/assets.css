@@ -14,6 +14,7 @@
   background: none;
   background-position: center;
   background-size: cover;
+  cursor: pointer;
   transition: all 275ms ease-in-out;
   &:hover {
     transform: scale(1.05);
@@ -23,6 +24,7 @@
     transform: scale(0.99);
   }
 }
+
 .btn--minus {
   background-image: url(../assets/icons/minus.svg);
 }

@@ -44,6 +44,9 @@ main {
 }
 .price{
   color: var(--text-price);
+  @media (max-width:900px) {
+    color: var(--text-primary);
+  }
 }
 .dnone {
   display: none;

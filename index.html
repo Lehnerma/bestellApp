@@ -96,7 +96,7 @@
 
           <section class="dish--container" id="drinks_container"></section>
         </div>
-        <section id="basket" class="sidebar--container dnone" role="basket for dishes">
+        <section id="basket" class="sidebar--container basket-open" role="basket for dishes">
           <article class="basket">
             <h3 class="title basket--title">🛒 Warenkorb</h3>
             <section class="basket--items" id="basket_items"></section>
@@ -139,24 +139,24 @@
         </main>
       </dialog>
     </main>
-
     <footer>
       <article class="title body-lg footer-section">
         <a href="#" class="noLink">©Veni Vidi Pizzi 2026</a>
         <a href="#" class="noLink">Imprint</a>
         <a href="#" class="noLink">Cookie Preferences</a>
       </article>
+      <nav class="bottom-nav">
+        <a href="index.html" class="noLink bottom-nav-item home"></a>
+        <a href="#" class="noLink bottom-nav-item user"></a>
+        <a href="#" class="noLink bottom-nav-item order"></a>
+        <section class="chart--wrapper">
+          <button class="noLink bottom-nav-item shoppingcart grid-item btn" onclick=""></button>
+          <p id="badget" class="badget">0</p>
+        </section>
+      </nav>
     </footer>
 
-    <nav class="bottom-nav">
-      <a href="index.html" class="noLink bottom-nav-item home"></a>
-      <a href="#" class="noLink bottom-nav-item user"></a>
-      <a href="#" class="noLink bottom-nav-item order"></a>
-      <section class="chart--wrapper">
-        <a href="#" class="noLink bottom-nav-item shoppingcart grid-item"></a>
-        <p id="badget" class="badget">0</p>
-      </section>
-    </nav>
+
 
     <script src="script.js"></script>
   </body>

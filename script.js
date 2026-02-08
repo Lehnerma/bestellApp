@@ -123,7 +123,7 @@ function renderAmount(dishIndex, dishId, dishCategory) {
   } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
     amountRef.classList.remove("dnone");
   }
-  amountRef.innerHTML = "added: " + ALL_DISHES[dishCategory][dishIndex].amount;
+  amountRef.innerHTML = ALL_DISHES[dishCategory][dishIndex].amount+"x";
 }
 
 function renderAmountBasket(dishIndex, dishId, dishCategory) {
@@ -228,7 +228,7 @@ function getTotalAmount(){
       totalAmount += ALL_DISHES[categorys[categoryIndex]][dishIndex].amount
     }
   }
-  console.log(totalAmount);
   badgetRef.innerText = '';
   badgetRef.innerText = totalAmount;
 }
+
