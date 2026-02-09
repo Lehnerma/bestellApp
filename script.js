@@ -44,8 +44,12 @@ basketItemsRef.addEventListener("click", (element) => {
 });
 
 orderBtn.addEventListener("click", (element) => {
-  DIALOG.showModal();
-  reset();
+  if (getTotalAmount()) {
+    console.log(getTotalAmount());
+  } else {
+    alert("Doch keinen Hunger? 🤔")
+  }
+
 });
 
 DIALOG.addEventListener("click", (element) => {
