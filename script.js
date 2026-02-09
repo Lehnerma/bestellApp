@@ -1,13 +1,13 @@
-let dishesRef = document.getElementById("dishes");
-let basketItemsRef = document.getElementById("basket_items");
-let subtotalPrice = document.getElementById("subtotal_price");
-let deliveryPrice = document.getElementById("delivery_price");
-let deliveryFee = 5;
-let totalPrice = document.getElementById("total_price");
-let orderBtn = document.getElementById("order_btn");
-let orderBtnPrice = document.getElementById("order_btn_price");
-let DIALOG = document.getElementById("dialog");
-let dialogBtn = document.getElementById("dialog_btn");
+const dishesRef = document.getElementById("dishes");
+const basketItemsRef = document.getElementById("basket_items");
+const subtotalPrice = document.getElementById("subtotal_price");
+const deliveryPrice = document.getElementById("delivery_price");
+const deliveryFee = 5;
+const totalPrice = document.getElementById("total_price");
+const orderBtn = document.getElementById("order_btn");
+const orderBtnPrice = document.getElementById("constrder_btn_price");
+const DIALOG = document.getElementById("dialog");
+const dialogBtn = document.getElementById("dialog_btn");
 
 function init() {
   renderCategorys();
