@@ -48,9 +48,17 @@ Typografie
 *****/
 .text{
   font-family: "oswald", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  font-weight: 400;
 }
 .title{
   font-family: "jetbrains-mono", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  font-weight: 400;
 }
 body{
   font-size: 1rem;

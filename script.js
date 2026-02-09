@@ -1,13 +1,13 @@
 const DISHES_REF = document.getElementById("dishes");
 const BASKET_ITEMS_REF = document.getElementById("basket_items");
-let subtotalPrice = document.getElementById("subtotal_price");
-let deliveryPrice = document.getElementById("delivery_price");
-const deliveryFee = 5;
-let totalPrice = document.getElementById("total_price");
+const SUBTOTAL_PRICE = document.getElementById("subtotal_price");
+const DELIVERY_PRICE = document.getElementById("delivery_price");
+const DELIVERY_FEE = 5;
+const TOTAL_PRICE = document.getElementById("total_price");
 const ORDER_BTN = document.getElementById("order_btn");
-const orderBtnPrice = document.getElementById("order_btn_price");
+const ORDER_BTN_PRICE = document.getElementById("order_btn_price");
 const DIALOG = document.getElementById("dialog");
-const dialogBtn = document.getElementById("dialog_btn");
+const DIALOG_BTN = document.getElementById("dialog_btn");
 
 function init() {
   renderCategorys();
@@ -23,10 +23,10 @@ function initEventListeners() {
 }
 
 function handleDishes(event) {
-  const obj = element.target.closest(".dish");
+  const obj = event.target.closest(".dish");
   if (!obj) return;
-  const { index, id, category } = obj.dataSet;
-  const btn = event.target.dataSet.btn;
+  const { index, id, category } = obj.dataset;
+  const btn = event.target.dataset.btn;
   if (btn == "add") {
     renderBasket(index, category);
     counting(id, category, btn);
@@ -38,10 +38,10 @@ function handleDishes(event) {
 }
 
 function handleBasketItems(event) {
-  const basketItem = element.target.closest(".basket--item");
+  const basketItem = event.target.closest(".basket--item");
   if (!basketItem) return;
-  const { index, id, category } = basketItem.dataSet;
-  const btn = element.target.dataset.btn;
+  const { index, id, category } = basketItem.dataset;
+  const btn = event.target.dataset.btn;
   counting(id, category, btn);
   if (ALL_DISHES[category][index].amount <= 0) {
     deletBasketItem(basketItem);
@@ -58,7 +58,7 @@ function handleOrder() {
 }
 
 function handleCloseDialog(event) {
-  if (event.target == DIALOG || event.target == dialogBtn) {
+  if (event.target == DIALOG || event.target == DIALOG_BTN) {
     DIALOG.close();
     showBasket();
   }
@@ -148,7 +148,7 @@ function renderBasketBin(dishIndex, dishId, dishCategory) {
 
 function renderBasket(dishIndex, category) {
   if (ALL_DISHES[category][dishIndex].amount == 0) {
-    basketItemsRef.innerHTML += getBasketItemTemplate(dishIndex, category);
+    BASKET_ITEMS_REF.innerHTML += getBasketItemTemplate(dishIndex, category);
   }
 }
 
@@ -160,7 +160,7 @@ function renderDishPrice(dishIndex, dishId, dishCategory) {
 }
 
 function renderDeliveryPrice() {
-  deliveryPrice.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(deliveryFee);
+  DELIVERY_PRICE.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(DELIVERY_FEE);
 }
 
 function renderTotalPrice() {
@@ -173,14 +173,14 @@ function renderTotalPrice() {
       }
     }
   }
-  subtotalPrice.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult);
-  let totalResult = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult + deliveryFee);
-  totalPrice.innerHTML = totalResult;
-  orderBtnPrice.innerHTML = totalResult;
+  SUBTOTAL_PRICE.innerHTML = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult);
+  let totalResult = Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(subResult + DELIVERY_FEE);
+  TOTAL_PRICE.innerHTML = totalResult;
+  ORDER_BTN_PRICE.innerHTML = totalResult;
 }
 
 function reset() {
-  basketItemsRef.innerHTML = "";
+  BASKET_ITEMS_REF.innerHTML = "";
   amountReset();
   renderTotalPrice();
   hideBasekt();
@@ -204,7 +204,7 @@ function deletBasketItem(dish) {
 
 function hideBasekt() {
   const basket = document.getElementById("basket");
-  if (!basketItemsRef.innerHTML) {
+  if (!BASKET_ITEMS_REF.innerHTML) {
     basket.classList.add("dnone");
   } else {
     basket.classList.remove("dnone");
