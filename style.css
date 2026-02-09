@@ -72,9 +72,13 @@ main nav {
 .sidebar--container {
   position: relative;
   justify-content: start;
-  /* background-color: green; */
+  @media (max-width:900px) {
+    display: flex;
+    align-items: flex-end;
+    overflow-y: hidden;
+  }
 }
- 
+
 .basket {
   position: sticky;
   top: 1rem;
@@ -87,28 +91,27 @@ main nav {
   max-height: 80vh;
   box-shadow: var(--shadow-sm);
   z-index: 5;
-  h3{
+  transition: transform 1s ease-in-out;
+  h3 {
     padding-top: 1rem;
   }
-
+  @media (max-width:900px) {
+    border-radius: 2rem 2rem 0 0;
+    justify-content: space-between;
+    background-color: var(--neutral-700);
+    width: 100%;
+    flex-grow: 1;
+    position: fixed;
+    top: auto;
+    bottom: 70px;
+    max-height: 80%; /* maybe to change for full cover*/
+  }
 }
 
-.basket-open{
+.sidebar-hidden {
   @media (max-width: 900px) {
-    display: flex;
-    align-items: flex-end;
-    overflow-y: hidden;
-
-    .basket{
-      flex-grow: 1;
-      position: fixed;
-      top: auto;
-      bottom: 70px;
-      width: 100%;
-      height: 80%;
-      border-radius: 2rem 2rem 0 0;
-      justify-content: space-between;
-      background-color: var(--neutral-700);
+    .basket {
+      transform: translateY(760px);
     }
   }
 }
@@ -117,7 +120,6 @@ main nav {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--bg-warm) var(--neutral-100);
@@ -125,7 +127,6 @@ main nav {
   h6 {
     padding-bottom: 1rem;
   }
-
 }
 
 .basket--item {
@@ -156,9 +157,7 @@ main nav {
   margin: var(--spacing-sm) 0;
 }
 
-.transparent {
-  opacity: 0.2;
-}
+
 
 .basket--row {
   display: flex;
@@ -170,6 +169,20 @@ main nav {
 footer {
   background-color: var(--bg-primary);
   padding: var(--spacing-sm);
+
+  @media (max-width: 900px) {
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    .footer-section {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
   article {
     display: flex;
     gap: 4rem;
@@ -190,23 +203,6 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
-  footer {
-    padding-bottom: 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  footer {
-    display: flex;
-    justify-content: center;
-  }
-  .footer-section {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
 .bottom-nav {
   width: 100%;
   background-color: var(--bg-dark);
@@ -221,10 +217,18 @@ footer {
     cursor: pointer;
   }
 }
+
+@media (min-width: 900px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
 .bottom-wrapper {
   display: flex;
   padding: var(--shadow-sm);
 }
+
 .bottom-nav-item {
   width: 45px;
   height: 45px;
@@ -267,12 +271,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 .grid-item {
   grid-area: 1/1;
-}
-
-@media (min-width: 900px) {
-  .bottom-nav {
-    display: none;
-  }
 }

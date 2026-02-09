@@ -51,6 +51,7 @@ orderBtn.addEventListener("click", (element) => {
 DIALOG.addEventListener("click", (element) => {
   if (element.target == DIALOG || element.target == dialogBtn) {
     DIALOG.close();
+    showBasket();
   }
 });
 
@@ -232,3 +233,7 @@ function getTotalAmount(){
   badgetRef.innerText = totalAmount;
 }
 
+function showBasket(){
+  let basketRef = document.getElementById("basket");
+  basketRef.classList.toggle("sidebar-hidden");
+}

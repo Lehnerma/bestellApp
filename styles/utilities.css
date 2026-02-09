@@ -51,3 +51,6 @@ main {
 .dnone {
   display: none;
 }
+.transparent {
+  opacity: 0.2;
+}
