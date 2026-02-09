@@ -1,62 +1,68 @@
-const dishesRef = document.getElementById("dishes");
-const basketItemsRef = document.getElementById("basket_items");
-const subtotalPrice = document.getElementById("subtotal_price");
-const deliveryPrice = document.getElementById("delivery_price");
+const DISHES_REF = document.getElementById("dishes");
+const BASKET_ITEMS_REF = document.getElementById("basket_items");
+let subtotalPrice = document.getElementById("subtotal_price");
+let deliveryPrice = document.getElementById("delivery_price");
 const deliveryFee = 5;
-const totalPrice = document.getElementById("total_price");
-const orderBtn = document.getElementById("order_btn");
-const orderBtnPrice = document.getElementById("constrder_btn_price");
+let totalPrice = document.getElementById("total_price");
+const ORDER_BTN = document.getElementById("order_btn");
+const orderBtnPrice = document.getElementById("order_btn_price");
 const DIALOG = document.getElementById("dialog");
 const dialogBtn = document.getElementById("dialog_btn");
 
 function init() {
   renderCategorys();
   renderDeliveryPrice();
+  initEventListeners();
 }
 
-dishesRef.addEventListener("click", (element) => {
+function initEventListeners() {
+  DISHES_REF.addEventListener("click", handleDishes);
+  BASKET_ITEMS_REF.addEventListener("click", handleBasketItems);
+  ORDER_BTN.addEventListener("click", handleOrder);
+  DIALOG.addEventListener("click", handleCloseDialog);
+}
+
+function handleDishes(event) {
   const obj = element.target.closest(".dish");
-  const dishIndex = obj.dataset.index;
-  const dishId = obj.dataset.id;
-  const dishCategory = obj.dataset.category;
-  const dataSet = element.target.dataset.btn;
-  if (dataSet == "add") {
-    renderBasket(dishIndex, dishCategory);
-    counting(dishId, dishCategory, dataSet);
+  if (!obj) return;
+  const { index, id, category } = obj.dataSet;
+  const btn = event.target.dataSet.btn;
+  if (btn == "add") {
+    renderBasket(index, category);
+    counting(id, category, btn);
   }
-  if (dataSet == "bin") {
-    counting(dishId, dishCategory, dataSet);
+  if (btn == "bin") {
+    counting(id, category, btn);
   }
   hideBasekt();
-});
+}
 
-basketItemsRef.addEventListener("click", (element) => {
+function handleBasketItems(event) {
   const basketItem = element.target.closest(".basket--item");
-  const dishIndex = basketItem.dataset.index;
-  const dishId = basketItem.dataset.id;
-  const dishCategory = basketItem.dataset.category;
+  if (!basketItem) return;
+  const { index, id, category } = basketItem.dataSet;
   const btn = element.target.dataset.btn;
-  counting(dishId, dishCategory, btn);
-  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
+  counting(id, category, btn);
+  if (ALL_DISHES[category][index].amount <= 0) {
     deletBasketItem(basketItem);
   }
-});
+}
 
-orderBtn.addEventListener("click", () => {
+function handleOrder() {
   if (getTotalAmount()) {
     DIALOG.showModal();
     reset();
   } else {
     alert("Doch keinen Hunger? 🤔");
   }
-});
+}
 
-DIALOG.addEventListener("click", (element) => {
-  if (element.target == DIALOG || element.target == dialogBtn) {
+function handleCloseDialog(event) {
+  if (event.target == DIALOG || event.target == dialogBtn) {
     DIALOG.close();
     showBasket();
   }
-});
+}
 
 function getCategorys(obj) {
   let categorys = Object.keys(obj);
@@ -65,28 +71,10 @@ function getCategorys(obj) {
 
 function renderCategorys() {
   let categorys = getCategorys(ALL_DISHES);
-  for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
-    if (categorys[categoryIndex] == "starters") {
-      let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-      renderDishes(containerRef, categorys[categoryIndex]);
-    }
-    if (categorys[categoryIndex] == "pasta") {
-      let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-      renderDishes(containerRef, categorys[categoryIndex]);
-    }
-    if (categorys[categoryIndex] == "pizzas") {
-      let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-      renderDishes(containerRef, categorys[categoryIndex]);
-    }
-    if (categorys[categoryIndex] == "desserts") {
-      let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-      renderDishes(containerRef, categorys[categoryIndex]);
-    }
-    if (categorys[categoryIndex] == "drinks") {
-      let containerRef = document.getElementById(categorys[categoryIndex] + "_container");
-      renderDishes(containerRef, categorys[categoryIndex]);
-    }
-  }
+  categorys.forEach((category) => {
+    let containerRef = document.getElementById(category + "_container");
+    renderDishes(containerRef, category);
+  });
 }
 
 function renderDishes(container, category) {
