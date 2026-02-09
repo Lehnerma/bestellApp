@@ -42,8 +42,7 @@ basketItemsRef.addEventListener("click", (element) => {
   }
 });
 
-orderBtn.addEventListener("click", (element) => {
-  console.log(getTotalAmount());
+orderBtn.addEventListener("click", () => {
   if (getTotalAmount()) {
     DIALOG.showModal();
     reset();
