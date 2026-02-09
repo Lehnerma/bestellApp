@@ -21,20 +21,19 @@
   <body onload="init()">
     <header>
       <article class="header">
-        <section role="logo section">
-          <!-- checken ob die role attribute richtig ist.  -->
-          <a href="./index.html" class="logo"></a>
+        <section>
+          <a href="./index.html" class="logo" aria-label="Logo Homepage"></a>
           <a href="" class="noLink"><h1 class="title">Bestell App</h1></a>
         </section>
-        <span role="burger-menu" class="burger"> </span>
+        <span class="burger"> </span>
       </article>
     </header>
     <main>
-      <article role="restaurant image" class="container--col">
+      <article aria-label="restaurant, img" class="container--col">
         <img src="./assets/img/pasta-bg.jpg" alt="Pasta Tomatos" class="main-bg" />
         <img src="./assets/icons/spaghetti.png" alt="Spagetti Logo" class="restaurant-logo" />
       </article>
-      <article role="Restaurant Name und Rating" class="container--col restaurant-title">
+      <article aria-label="Restaurant Name und Rating" class="container--col restaurant-title">
         <h2 class="title tx-center">Veni Vidi Pizzi</h2>
         <h4 class="title tx-center">Ich kam - sah - und aß Pizza</h4>
         <aside class="star-rating-container bg-md">
@@ -98,7 +97,10 @@
         </div>
         <section id="basket" class="sidebar--container sidebar-hidden dnone" role="basket for dishes">
           <article class="basket">
-            <h3 class="title basket--title">🛒 Warenkorb</h3>
+            <section class="header-wrapper">
+              <h3 class="title basket--title">🛒 Warenkorb</h3>
+              <button class="close--btn btn" onclick="showBasket()" aria-label="close basket"></button>
+            </section>
             <section class="basket--items" id="basket_items"></section>
 
             <section id="basket_price_section" class="text caption-lg price--container">
@@ -156,8 +158,7 @@
       </nav>
     </footer>
 
-
-
     <script src="script.js"></script>
   </body>
 </html>
+<button aria-label="add button"></button>

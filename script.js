@@ -20,7 +20,6 @@ dishesRef.addEventListener("click", (element) => {
   const dishId = obj.dataset.id;
   const dishCategory = obj.dataset.category;
   const dataSet = element.target.dataset.btn;
-
   if (dataSet == "add") {
     renderBasket(dishIndex, dishCategory);
     counting(dishId, dishCategory, dataSet);
@@ -44,12 +43,13 @@ basketItemsRef.addEventListener("click", (element) => {
 });
 
 orderBtn.addEventListener("click", (element) => {
+  console.log(getTotalAmount());
   if (getTotalAmount()) {
-    console.log(getTotalAmount());
+    DIALOG.showModal();
+    reset();
   } else {
-    alert("Doch keinen Hunger? 🤔")
+    alert("Doch keinen Hunger? 🤔");
   }
-
 });
 
 DIALOG.addEventListener("click", (element) => {
@@ -115,7 +115,7 @@ function counting(dishId, dishCategory, btn) {
       renderAmount(dishIndex, dishId, dishCategory);
       renderAmountBasket(dishIndex, dishId, dishCategory);
       renderTotalPrice();
-      getTotalAmount()
+      getTotalAmount();
     }
   }
 }
@@ -128,7 +128,7 @@ function renderAmount(dishIndex, dishId, dishCategory) {
   } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
     amountRef.classList.remove("dnone");
   }
-  amountRef.innerHTML = ALL_DISHES[dishCategory][dishIndex].amount+"x";
+  amountRef.innerHTML = ALL_DISHES[dishCategory][dishIndex].amount + "x";
 }
 
 function renderAmountBasket(dishIndex, dishId, dishCategory) {
@@ -197,7 +197,7 @@ function reset() {
   amountReset();
   renderTotalPrice();
   hideBasekt();
-  getTotalAmount()
+  getTotalAmount();
 }
 
 function amountReset() {
@@ -224,20 +224,21 @@ function hideBasekt() {
   }
 }
 
-function getTotalAmount(){
+function getTotalAmount() {
   let categorys = getCategorys(ALL_DISHES);
   let totalAmount = 0;
-  let badgetRef = document.getElementById("badget")
+  let badgetRef = document.getElementById("badget");
   for (let categoryIndex = 0; categoryIndex < categorys.length; categoryIndex++) {
     for (let dishIndex = 0; dishIndex < ALL_DISHES[categorys[categoryIndex]].length; dishIndex++) {
-      totalAmount += ALL_DISHES[categorys[categoryIndex]][dishIndex].amount
+      totalAmount += ALL_DISHES[categorys[categoryIndex]][dishIndex].amount;
     }
   }
-  badgetRef.innerText = '';
+  badgetRef.innerText = "";
   badgetRef.innerText = totalAmount;
+  return totalAmount;
 }
 
-function showBasket(){
+function showBasket() {
   let basketRef = document.getElementById("basket");
   basketRef.classList.toggle("sidebar-hidden");
 }

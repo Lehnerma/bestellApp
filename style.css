@@ -72,7 +72,7 @@ main nav {
 .sidebar--container {
   position: relative;
   justify-content: start;
-  @media (max-width:900px) {
+  @media (max-width: 900px) {
     display: flex;
     align-items: flex-end;
     overflow-y: hidden;
@@ -95,24 +95,46 @@ main nav {
   h3 {
     padding-top: 1rem;
   }
-  @media (max-width:900px) {
+  @media (max-width: 900px) {
     border-radius: 2rem 2rem 0 0;
     justify-content: space-between;
     background-color: var(--neutral-700);
     width: 100%;
     flex-grow: 1;
     position: fixed;
-    top: auto;
+    top: 0;
     bottom: 70px;
-    max-height: 80%; /* maybe to change for full cover*/
+    max-height: 100%;
+    border-radius: 0;
   }
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
 }
 
 .sidebar-hidden {
   @media (max-width: 900px) {
     .basket {
-      transform: translateY(760px);
+      transform: translateY(100vh);
     }
+  }
+}
+
+.close--btn {
+  background-image: url(../assets/icons/close.svg);
+  background-size: cover;
+  cursor: pointer;
+  margin: var(--spacing-sm);
+  height: 3rem;
+  width: 3rem;
+  &:hover {
+    transform: scale(1.05) rotate(18deg);
+  }
+  @media (min-width: 900px) {
+    display: none;
   }
 }
 
@@ -156,8 +178,6 @@ main nav {
   height: 1px;
   margin: var(--spacing-sm) 0;
 }
-
-
 
 .basket--row {
   display: flex;

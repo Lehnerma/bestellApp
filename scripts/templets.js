@@ -10,18 +10,18 @@ function getDishTemplet(category, dishIndex) {
         <p class="text dish-desc">${ALL_DISHES[category][dishIndex].info}</p>
     </section>
     <section class="dish--right">
-        <p class="dish--price price">${Intl.NumberFormat("de-DE", {style: "currency", currency:"EUR"}).format(ALL_DISHES[category][dishIndex].price)}</p>
+        <p class="dish--price price">${Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(ALL_DISHES[category][dishIndex].price)}</p>
         <aside class="dish--btns">
-            <button class="btn--card add" data-btn="add"></button>
+            <button class="btn--card add" data-btn="add" aria-label="add button"></button>
             <p class="text dish--added dnone" id="amount${ALL_DISHES[category][dishIndex].id}">added</p>
-            <button class="btn--card bin dnone" id="bin${ALL_DISHES[category][dishIndex].id}" data-btn="bin"></button>
+            <button class="btn--card bin dnone" id="bin${ALL_DISHES[category][dishIndex].id}" data-btn="bin" aria-label="trash button"></button>
         </aside>
     </section>
-</article>`
-};
+</article>`;
+}
 
-function getBasketItemTemplate(dishIndex, category){
-    return `
+function getBasketItemTemplate(dishIndex, category) {
+  return `
 <article class="basket--item item"
 id="item_${ALL_DISHES[category][dishIndex].id}"
  data-id="${ALL_DISHES[category][dishIndex].id}"
@@ -30,12 +30,12 @@ id="item_${ALL_DISHES[category][dishIndex].id}"
     <h6 class="title basket--title">${ALL_DISHES[category][dishIndex].name}</h6>
     <section class="wrapper">
         <aside class="dish--btns text">
-            <button class="btn bin" id="basket_bin${ALL_DISHES[category][dishIndex].id}" data-btn="minus"></button>
+            <button class="btn bin" id="basket_bin${ALL_DISHES[category][dishIndex].id}" data-btn="minus" aria-label="minus button"></button>
             <p class="text" id="basket_amount${ALL_DISHES[category][dishIndex].id}">${ALL_DISHES[category][dishIndex].amount}</p>
-            <button class="btn btn--plus" data-btn="plus"></button>
+            <button class="btn btn--plus" data-btn="plus" aria-label="plus button"></button>
         </aside>
         <p class="text price" id="price${ALL_DISHES[category][dishIndex].id}">price</p>
     </section>
-</article>`
-}; 
+</article>`;
+}
 //adding function to calculate the full price

@@ -1,44 +1,43 @@
-.dialog{
-    margin: auto;
-    z-index: 1;
-    border-radius: 2rem;
-    border: none;
-    padding: var(--spacing-lg);
-    header{
-        background-color: white;
-        flex-direction: column;
-        align-items: center;
-        img{
-            width: 150px;
-        }
+.dialog {
+  margin: auto;
+  z-index: 1;
+  border-radius: 2rem;
+  border: none;
+  padding: var(--spacing-lg);
+  header {
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 150px;
     }
-    main{
-        h1{
-            padding: var(--spacing-sm);
-            @media (max-width: 600px) {
-                text-align: center;
-            }
-        }
-        p{
-            width: 80%;
-            text-align: center;
-        }
+  }
+  main {
+    h1 {
+      padding: var(--spacing-sm);
+      @media (max-width: 600px) {
+        text-align: center;
+      }
     }
-
+    p {
+      width: 80%;
+      text-align: center;
+    }
+  }
 }
-.dialog::backdrop{
-    opacity: 0.8;
-    background-color: var(--neutral-800);
+.dialog::backdrop {
+  opacity: 0.8;
+  background-color: var(--neutral-800);
 }
-.dialog--btn{
-    align-self: flex-end;
-    background-image: url(../assets/icons/close.svg);
-    background-size: cover;
-    cursor: pointer;
-    margin: var(--spacing-sm);
-    height: 3rem;
-    width: 3rem;
-    &:hover{
-        transform: scale(1.05) rotate(18deg);
-    }
+.dialog--btn {
+  align-self: flex-end;
+  background-image: url(../assets/icons/close.svg);
+  background-size: cover;
+  cursor: pointer;
+  margin: var(--spacing-sm);
+  height: 3rem;
+  width: 3rem;
+  &:hover {
+    transform: scale(1.05) rotate(18deg);
+  }
 }

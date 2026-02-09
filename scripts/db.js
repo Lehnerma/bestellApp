@@ -3,7 +3,7 @@ const ALL_DISHES = {
     {
       id: 0,
       name: "Bruschetta Classica",
-      price: 6.50,
+      price: 6.5,
       info: "Geröstetes Brot mit frischen Tomaten, Basilikum und Knoblauch",
       url: "../assets/img/bruschetta.jpg",
       amount: 0,
@@ -21,7 +21,7 @@ const ALL_DISHES = {
     {
       id: 2,
       name: "Caprese",
-      price: 8.80,
+      price: 8.8,
       info: "Mozzarella mit Tomaten, frischem Basilikum und Olivenöl",
       url: "../assets/img/tomate-mozi.jpg",
       amount: 0,
@@ -30,7 +30,7 @@ const ALL_DISHES = {
     {
       id: 3,
       name: "Vitello Tonnato",
-      price: 14.50,
+      price: 14.5,
       info: "Zartes Kalbfleisch mit cremiger Thunfischsauce und Kapern",
       url: "../assets/img/vitello.jpg",
       amount: 0,
@@ -42,7 +42,7 @@ const ALL_DISHES = {
     {
       id: 4,
       name: "Spaghetti Carbonara",
-      price: 11.50,
+      price: 11.5,
       info: "Klassische römische Pasta mit Ei, Speck, Parmesan und schwarzem Pfeffer",
       url: "../assets/img/carbonara.jpg",
       amount: 0,
@@ -52,7 +52,7 @@ const ALL_DISHES = {
     {
       id: 5,
       name: "Penne all'Arrabbiata",
-      price: 9.80,
+      price: 9.8,
       info: "Scharfe Tomatensauce mit Knoblauch, Chili und Petersilie",
       url: "../assets/img/arabiata.jpg",
       amount: 0,
@@ -62,7 +62,7 @@ const ALL_DISHES = {
     {
       id: 6,
       name: "Fettuccine Alfredo",
-      price: 12.90,
+      price: 12.9,
       info: "Cremige Pasta mit Butter, Parmesan und frischen Kräutern",
       url: "../assets/img/alfredo.jpg",
       amount: 0,
@@ -75,7 +75,7 @@ const ALL_DISHES = {
     {
       id: 7,
       name: "Pizza Margherita",
-      price: 8.50,
+      price: 8.5,
       info: "Klassische Pizza mit Tomatensauce, Mozzarella und frischem Basilikum",
       url: "../assets/img/margherita.jpg",
       amount: 0,
@@ -85,7 +85,7 @@ const ALL_DISHES = {
     {
       id: 8,
       name: "Pizza Prosciutto",
-      price: 11.90,
+      price: 11.9,
       info: "Mit italienischem Schinken, Mozzarella und Tomatensauce",
       url: "../assets/img/prosciutto.jpg",
       amount: 0,
@@ -95,7 +95,7 @@ const ALL_DISHES = {
     {
       id: 9,
       name: "Pizza Quattro Stagioni",
-      price: 13.50,
+      price: 13.5,
       info: "Vier Jahreszeiten mit Schinken, Pilzen, Artischocken und Oliven",
       url: "../assets/img/quattro.jpg",
       amount: 0,
@@ -105,7 +105,7 @@ const ALL_DISHES = {
     {
       id: 10,
       name: "Pizza Vegetariana",
-      price: 10.90,
+      price: 10.9,
       info: "Mit gegrilltem Gemüse, Paprika, Zucchini, Auberginen und Mozzarella",
       url: "../assets/img/veggi.jpg",
       amount: 0,
@@ -115,7 +115,7 @@ const ALL_DISHES = {
     {
       id: 11,
       name: "Pizza Diavola",
-      price: 12.50,
+      price: 12.5,
       info: "Scharfe Pizza mit würziger Salami, Chili und Mozzarella",
       url: "../assets/img/diavolo.jpg",
       amount: 0,
@@ -128,7 +128,7 @@ const ALL_DISHES = {
     {
       id: 12,
       name: "Tiramisu",
-      price: 5.90,
+      price: 5.9,
       info: "Klassisches italienisches Dessert mit Mascarpone, Kaffee und Kakao",
       url: "../assets/img/tiramisu.jpg",
       amount: 0,
@@ -137,7 +137,7 @@ const ALL_DISHES = {
     {
       id: 13,
       name: "Panna Cotta",
-      price: 4.80,
+      price: 4.8,
       info: "Cremige Milchpudding mit frischen Beeren und Vanille",
       url: "../assets/img/panacotta.jpg",
       amount: 0,
@@ -146,7 +146,7 @@ const ALL_DISHES = {
     {
       id: 14,
       name: "Cannoli Siciliani",
-      price: 6.50,
+      price: 6.5,
       info: "Knusprige sizilianische Teigröllchen gefüllt mit süßer Ricotta-Creme",
       url: "../assets/img/canelloni.jpg ",
       amount: 0,
@@ -158,7 +158,7 @@ const ALL_DISHES = {
     {
       id: 15,
       name: "Cola",
-      price: 2.50,
+      price: 2.5,
       info: "Die klassische Zuckerhaltige Erfrischung",
       url: "../assets/img/cola.jpg",
       amount: 0,
@@ -166,7 +166,7 @@ const ALL_DISHES = {
     {
       id: 16,
       name: "Sprite",
-      price: 2.50,
+      price: 2.5,
       info: "Für alle die es Zitronig mögen",
       url: "../assets/img/sprite.jpg",
       amount: 0,
@@ -174,7 +174,7 @@ const ALL_DISHES = {
     {
       id: 17,
       name: "Fanta",
-      price: 2.50,
+      price: 2.5,
       info: "Trinke Fanta, Lebe bunter!",
       url: "../assets/img/fanta.jpg",
       amount: 0,
@@ -182,7 +182,7 @@ const ALL_DISHES = {
     {
       id: 18,
       name: "Espresso ToGo",
-      price: 3.80,
+      price: 3.8,
       info: "Italienische Kräftigung nach einem langen Tag am Computer",
       url: "../assets/img/coffee.jpg",
       amount: 0,

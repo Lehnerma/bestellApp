@@ -24,7 +24,6 @@ main {
 .container--row {
   display: flex;
   justify-content: center;
-
 }
 .container--col {
   display: flex;
@@ -39,12 +38,12 @@ main {
 .bg-md {
   background-color: var(--neutral-300);
 }
-.bg-primary{
+.bg-primary {
   background-color: var(--bg-primary);
 }
-.price{
+.price {
   color: var(--text-price);
-  @media (max-width:900px) {
+  @media (max-width: 900px) {
     color: var(--text-primary);
   }
 }

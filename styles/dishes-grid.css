@@ -99,7 +99,7 @@
   border-radius: 1rem;
   text-align: center;
 }
-.dish--price{
+.dish--price {
   @media (max-width: 900px) {
     align-self: center;
   }
@@ -132,4 +132,3 @@
 .bin {
   background-image: url(../assets/icons/bin.svg);
 }
-
