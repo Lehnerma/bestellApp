@@ -46,110 +46,102 @@
 /*****
 Typografie 
 *****/
-.text{
+.text {
   font-family: "oswald", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: 0.03em;
-  font-weight: 400;
 }
-.title{
+.title {
   font-family: "jetbrains-mono", sans-serif;
+}
+body {
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
   font-weight: 400;
 }
-body{
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: 0.03em;
-  font-weight: 400;
-}
-.dp-lg{
+.dp-lg {
   font-size: 2.44rem;
   line-height: 1.55;
   letter-spacing: 0.015em;
   font-weight: 800;
 }
-.dp-md{
+.dp-md {
   font-size: 2.18rem;
   line-height: 1.55;
   letter-spacing: 0.015em;
   font-weight: 800;
 }
-h1{
+h1 {
   font-size: 1.85rem;
   line-height: 1.55;
   letter-spacing: 0.02em;
   font-weight: 500;
 }
-h2{
+h2 {
   font-size: 1.56rem;
   line-height: 1.55;
   letter-spacing: 0.02em;
   font-weight: 600;
 }
-h3{
+h3 {
   font-size: 1.4rem;
   line-height: 1.6;
   letter-spacing: 0.025em;
   font-weight: 600;
 }
-h4{
+h4 {
   font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: 0.025em;
   font-weight: 500;
 }
-h5{
+h5 {
   font-size: 1.18rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
   font-weight: 500;
 }
-h6{
+h6 {
   font-size: 1.02rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
   font-weight: 500;
 }
-.body-lg{
+.body-lg {
   font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
   font-weight: 400;
 }
-.body-sm{
+.body-sm {
   font-size: 0.95rem;
   line-height: 1.65;
   letter-spacing: 0.03em;
   font-weight: 400;
 }
-.caption-lg{
+.caption-lg {
   font-size: 0.85rem;
   line-height: 1.65;
   letter-spacing: 0.03em;
   font-weight: 400;
 }
-.caption{
+.caption {
   font-size: 0.85rem;
   line-height: 1.65;
   letter-spacing: 0.03em;
   font-weight: 300;
 }
-.caption-sm{
+.caption-sm {
   font-size: 0.8rem;
   line-height: 1.65;
   letter-spacing: 0.03em;
   font-weight: 300;
 }
-.overline{
+.overline {
   font-size: 0.76rem;
   line-height: 1.65;
   letter-spacing: 0.03em;
   font-weight: 500;
 }
-.tx-center{
-    text-align: center;
+.tx-center {
+  text-align: center;
 }

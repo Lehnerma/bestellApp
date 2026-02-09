@@ -38,4 +38,3 @@ id="item_${ALL_DISHES[category][dishIndex].id}"
     </section>
 </article>`;
 }
-//adding function to calculate the full price
