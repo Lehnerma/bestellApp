@@ -64,10 +64,7 @@ function handleCloseDialog(event) {
   }
 }
 
-function getCategorys(obj) {
-  let categorys = Object.keys(obj);
-  return categorys;
-}
+const getCategorys = (obj) => Object.keys(obj);
 
 function renderCategorys() {
   let categorys = getCategorys(ALL_DISHES);
@@ -78,9 +75,7 @@ function renderCategorys() {
 }
 
 function renderDishes(container, category) {
-  for (let dishIndex = 0; dishIndex < ALL_DISHES[category].length; dishIndex++) {
-    container.innerHTML += getDishTemplet(category, dishIndex);
-  }
+  ALL_DISHES[category].forEach((_, index) => (container.innerHTML += getDishTemplet(category, index)));
 }
 
 function counting(dishId, dishCategory, btn) {
@@ -97,12 +92,12 @@ function counting(dishId, dishCategory, btn) {
         ALL_DISHES[dishCategory][dishIndex].amount = 0;
         deletBasketItem(basketRef);
       }
-      renderTotal()
+      renderTotal(dishIndex, dishId, dishCategory);
     }
   }
 }
 
-function renderTotal(dishIndex, dishId, dishCategory){
+function renderTotal(dishIndex, dishId, dishCategory) {
   renderBin(dishIndex, dishId, dishCategory);
   renderBasketBin(dishIndex, dishId, dishCategory);
   renderAmount(dishIndex, dishId, dishCategory);
@@ -112,8 +107,9 @@ function renderTotal(dishIndex, dishId, dishCategory){
 }
 
 function renderAmount(dishIndex, dishId, dishCategory) {
-  let amountRef = document.getElementById("amount" + dishId);
+  const amountRef = document.getElementById("amount" + dishId);
   amountRef.innerHTML = "";
+
   if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
     amountRef.classList.add("dnone");
   } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
@@ -124,19 +120,15 @@ function renderAmount(dishIndex, dishId, dishCategory) {
 
 function renderAmountBasket(dishIndex, dishId, dishCategory) {
   let basketAmountRef = document.getElementById("basket_amount" + dishId);
-  if (basketAmountRef) {
-    basketAmountRef.innerHTML = "";
-    basketAmountRef.innerHTML = ALL_DISHES[dishCategory][dishIndex].amount;
-  }
+  if (!basketAmountRef) return;
+  basketAmountRef.innerHTML = "";
+  basketAmountRef.innerHTML = ALL_DISHES[dishCategory][dishIndex].amount;
 }
 
 function renderBin(dishIndex, dishId, dishCategory) {
-  let binRef = document.getElementById("bin" + dishId);
-  if (ALL_DISHES[dishCategory][dishIndex].amount <= 0) {
-    binRef.classList.add("dnone");
-  } else if (ALL_DISHES[dishCategory][dishIndex].amount > 0) {
-    binRef.classList.remove("dnone");
-  }
+  const binRef = document.getElementById("bin" + dishId);
+  const amount = ALL_DISHES[dishCategory][dishIndex].amount;
+  binRef.classList.toggle("dnone", amount <= 0 );
 }
 
 function renderBasketBin(dishIndex, dishId, dishCategory) {
@@ -208,11 +200,7 @@ function deletBasketItem(dish) {
 
 function hideBasekt() {
   const basket = document.getElementById("basket");
-  if (!BASKET_ITEMS_REF.innerHTML) {
-    basket.classList.add("dnone");
-  } else {
-    basket.classList.remove("dnone");
-  }
+  basket.classList.toggle("dnone", !BASKET_ITEMS_REF.innerHTML)
 }
 
 function getTotalAmount() {
