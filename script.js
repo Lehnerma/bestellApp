@@ -97,14 +97,18 @@ function counting(dishId, dishCategory, btn) {
         ALL_DISHES[dishCategory][dishIndex].amount = 0;
         deletBasketItem(basketRef);
       }
-      renderBin(dishIndex, dishId, dishCategory);
-      renderBasketBin(dishIndex, dishId, dishCategory);
-      renderAmount(dishIndex, dishId, dishCategory);
-      renderAmountBasket(dishIndex, dishId, dishCategory);
-      renderTotalPrice();
-      getTotalAmount();
+      renderTotal()
     }
   }
+}
+
+function renderTotal(dishIndex, dishId, dishCategory){
+  renderBin(dishIndex, dishId, dishCategory);
+  renderBasketBin(dishIndex, dishId, dishCategory);
+  renderAmount(dishIndex, dishId, dishCategory);
+  renderAmountBasket(dishIndex, dishId, dishCategory);
+  renderTotalPrice();
+  getTotalAmount();
 }
 
 function renderAmount(dishIndex, dishId, dishCategory) {
